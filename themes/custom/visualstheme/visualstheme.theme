@@ -1,0 +1,23 @@
+<?php 
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+
+function visualstheme_preprocess_page__front(&$variables) {
+  // Load nodes of type 'national_assembly'.
+  $na_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'national_assembly', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['national_assembly_nodes'] = $na_nodes;
+
+  // Load nodes of type 'senate'.
+  $senate_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'senate', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['senate_nodes'] = $senate_nodes;
+}
+
+?>
