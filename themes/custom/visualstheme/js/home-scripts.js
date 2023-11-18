@@ -43,71 +43,28 @@ svgElement.addEventListener("mouseleave", function () {
 });
 
 
-var divs = document.querySelectorAll('.first-news-block > div');
-var totalDivs = divs.length;
-var interval = 2000; // 3 seconds
+function startFadingContent(selector, totalDivs, interval) {
+  var divs = document.querySelectorAll(selector);
+  var currentIndex = 0;
 
-function displayDivs(index) {
-  var currentIndex = index % totalDivs;
+  function displayDivs() {
+    currentIndex = currentIndex % totalDivs;
 
-  divs.forEach(function(div, i) {
-    if (i === currentIndex) {
-      div.style.opacity = 1;
-    } else {
-      div.style.opacity = 0;
-    }
-  });
+    divs.forEach(function (div, i) {
+      div.style.opacity = i === currentIndex ? 1 : 0;
+    });
 
-  setTimeout(function() {
-    displayDivs(currentIndex + 1);
-  }, interval);
+    setTimeout(function () {
+      currentIndex++;
+      displayDivs();
+    }, interval);
+  }
+
+  // Start the display process
+  displayDivs();
 }
 
-// Start the display process
-displayDivs(0);
-
-var divs2 = document.querySelectorAll('.second-news-block > div');
-var totalDivs2 = divs2.length;
-var interval2 = 3000; // 3 seconds
-
-function displayDivs2(index2) {
-  var currentIndex2 = index2 % totalDivs2;
-
-  divs2.forEach(function(div, i) {
-    if (i === currentIndex2) {
-      div.style.opacity = 1;
-    } else {
-      div.style.opacity = 0;
-    }
-  });
-
-  setTimeout(function() {
-    displayDivs2(currentIndex2 + 1);
-  }, interval2);
-}
-
-// Start the display process
-displayDivs2(0);
-
-var divs3 = document.querySelectorAll('.scroll-text > div');
-var totalDivs3 = divs3.length;
-var interval3 = 3000; // 3 seconds
-
-function displayDivs3(index3) {
-  var currentIndex3 = index3 % totalDivs3;
-
-  divs3.forEach(function(div, i) {
-    if (i === currentIndex3) {
-      div.style.opacity = 1;
-    } else {
-      div.style.opacity = 0;
-    }
-  });
-
-  setTimeout(function() {
-    displayDivs3(currentIndex3 + 1);
-  }, interval3);
-}
-
-// Start the display process
-displayDivs3(0);
+// Example usage
+startFadingContent('.first-news-block > div', document.querySelectorAll('.first-news-block > div').length, 3000);
+startFadingContent('.second-news-block > div', document.querySelectorAll('.second-news-block > div').length, 3000);
+startFadingContent('.scroll-text > div', document.querySelectorAll('.scroll-text > div').length, 3000);

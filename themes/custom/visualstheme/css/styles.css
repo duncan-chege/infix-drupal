@@ -186,7 +186,7 @@ ul.splide__pagination {
 
 .first-news-block > div, .second-news-block > div, .scroll-text > div {
   position: absolute;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .8s ease-in-out;
   opacity: 0;
 }
 
