@@ -1,11 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var splide = new Splide('.splide', {
-        type    : 'loop',
-        perPage : 1,
-        autoplay: true,
-        speed: 300,
-    });
-    splide.mount();
+  let splide_hero = new Splide('.splide.hero-images', {
+    type: 'loop',
+    perPage: 1,
+    autoplay: true,
+    speed: 300,
+  });
+  splide_hero.mount();
+
+  let splide_schedule = new Splide('.splide.schedule',{
+    pagination: false,
+  });
+  splide_schedule.mount();
+
+  let splide_schedule_2 = new Splide('.splide.schedule-2',{
+    pagination: false,
+  });
+  splide_schedule_2.mount();
 });
 
 function handleMouseMove(event) {
