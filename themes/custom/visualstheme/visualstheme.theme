@@ -18,6 +18,22 @@ function visualstheme_preprocess_page__front(&$variables) {
 
   // Add the nodes to the page variables.
   $variables['senate_nodes'] = $senate_nodes;
+
+   // Load nodes of type 'first committee'.
+  $fc_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'committee_work', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['committee_nodes'] = $fc_nodes;
+
+
+   // Load nodes of type 'second committee'.
+  $sc_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'second_committee_work', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['second_committee_nodes'] = $sc_nodes;
 }
+
 
 ?>

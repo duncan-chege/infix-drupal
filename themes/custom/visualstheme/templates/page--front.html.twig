@@ -50,13 +50,13 @@
     <div class="splide__track">
       <ul class="splide__list">
         <li class="splide__slide">
-          <img src="{{ base_path ~ directory }}/images/slide-1.jpg" alt="" />
+          <img src="{{ base_path ~ directory }}/images/slide-1.png" alt="" />
         </li>
         <li class="splide__slide">
-          <img src="{{ base_path ~ directory }}/images/slide-2.jpg" alt="" />
+          <img src="{{ base_path ~ directory }}/images/slide-2.png" alt="" />
         </li>
         <li class="splide__slide">
-          <img src="{{ base_path ~ directory }}/images/slide-3.jpg" alt="" />
+          <img src="{{ base_path ~ directory }}/images/slide-3.png" alt="" />
         </li>
       </ul>
     </div>
@@ -232,7 +232,7 @@
         News & Updates
       </h3>
       <div class="news-block">
-        <img src="{{ base_path ~ directory }}/images/slide-1.jpg" />
+        <img src="{{ base_path ~ directory }}/images/slide-1.png" />
         <div class="first-news-block">
           <p> National Assembly</p>
           {% if national_assembly_nodes %}
@@ -249,7 +249,7 @@
       </div>
 
       <div class="news-block">
-        <img src="{{ base_path ~ directory }}/images/slide-2.jpg" />
+        <img src="{{ base_path ~ directory }}/images/slide-2.png" />
         <div class="second-news-block">
           <p> Senate </p>
           {% if senate_nodes %}
@@ -276,29 +276,15 @@
     <h2>COMMITTEE WORK</h2>
     <div class="container">
       <div class="row">
+        {% if committee_nodes %}
+        {% for node in committee_nodes %}
         <div class="col-md-4">
-          <img src="{{ base_path ~ directory }}/images/slide-1.jpg" />
-          <h5>
-            Objectively innovate wireless total linkage before best-of-breed
-            deliverables
-          </h5>
-          <a href="#">Read More</a>
+          <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
+          <h5> {{ node.title.value }} </h5>
+          <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
         </div>
-        <div class="col-md-4">
-          <img src="{{ base_path ~ directory }}/images/slide-2.jpg" />
-          <h5>
-            Dramatically orchestrate low-risk high-yield infrastructures
-          </h5>
-          <a href="#">Read More</a>
-        </div>
-        <div class="col-md-4">
-          <img src="{{ base_path ~ directory }}/images/slide-3.jpg" />
-          <h5>
-            Enthusiastically enable leveraged benefits rather than front-end
-            opportunities
-          </h5>
-          <a href="#">Read More</a>
-        </div>
+        {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -306,29 +292,15 @@
     <h2>SECOND COMMITTEE WORK</h2>
     <div class="container">
       <div class="row">
+        {% if second_committee_nodes %}
+        {% for node in second_committee_nodes %}
         <div class="col-md-4">
-          <img src="{{ base_path ~ directory }}/images/slide-1.jpg" />
-          <h5>
-            Objectively innovate wireless total linkage before best-of-breed
-            deliverables
-          </h5>
-          <a href="#">Read More</a>
+          <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
+          <h5> {{ node.title.value }} </h5>
+          <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
         </div>
-        <div class="col-md-4">
-          <img src="{{ base_path ~ directory }}/images/slide-2.jpg" />
-          <h5>
-            Dramatically orchestrate low-risk high-yield infrastructures
-          </h5>
-          <a href="#">Read More</a>
-        </div>
-        <div class="col-md-4">
-          <img src="{{ base_path ~ directory }}/images/slide-3.jpg" />
-          <h5>
-            Enthusiastically enable leveraged benefits rather than front-end
-            opportunities
-          </h5>
-          <a href="#">Read More</a>
-        </div>
+        {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
