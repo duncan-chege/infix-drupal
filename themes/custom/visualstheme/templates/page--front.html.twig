@@ -106,60 +106,32 @@
         <div class="tab-pane fade show active" id="pills-tab-1" role="tabpanel" aria-labelledby="pills-tab-1-tab"
           tabindex="0">
           <div class="schedule-title">
-            <p>Tab 1 Schedule</p>
+            <p>National Assembly Schedule</p>
           </div>
           <div class="splide schedule">
             <div class="splide__track">
               <ul class="splide__list">
+                {% if nat_schedule %}
+                {% for node in nat_schedule %}
                 <li class="splide__slide">
                   <div class="schedule-date">
-                    <p>Thur, 16 Nov 2023</p>
+                    {% set event_date = node.field_time.value|date('D, d M Y') %}
+                    {% if node.field_time.value|date('Y-m-d') != 'now'|date('Y-m-d') %}
+                    {% set event_date = node.field_time.value|date('l, d M Y') %}
+                    {% else %}
+                    {% set event_date = 'Today, ' ~ node.field_time.value|date('d M Y') %}
+                    {% endif %}
+                    <p>{{ event_date }}</p>
                   </div>
                   <div class="tab-info">
                     <div>
-                      <p class="schedule-time"> 08:30 </p>
-                      <p class="schedule-topic"> Minister for Environment Talk </p>
-                    </div>
-                    <div>
-                      <p class="schedule-time"> 10:00 </p>
-                      <p class="schedule-topic"> Questions on Policy & Legislation </p>
-                    </div>
-                    <div>
-                      <p class="schedule-time"> 13:00 </p>
-                      <p class="schedule-topic"> Statements on Science Week </p>
+                      <p class="schedule-time"> {{ node.field_time.value|date('H:i') }} </p>
+                      <p class="schedule-topic"> {{ node.title.value }} </p>
                     </div>
                   </div>
                 </li>
-                <li class="splide__slide">
-                  <div class="schedule-date">
-                    <p>Mon, 20 Nov 2023</p>
-                  </div>
-                  <div class="tab-info">
-                    <div>
-                      <p class="schedule-time"> 08:30 </p>
-                      <p class="schedule-topic"> Commencement Matters </p>
-                    </div>
-                    <div>
-                      <p class="schedule-time"> 10:00 </p>
-                      <p class="schedule-topic"> Order of Business </p>
-                    </div>
-                    <div>
-                      <p class="schedule-time"> 13:00 </p>
-                      <p class="schedule-topic"> Private Members' Business </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <div class="schedule-date">
-                    <p>Wed, 17 Nov 2023</p>
-                  </div>
-                  <div class="tab-info">
-                    Assertively re-engineer economically sound architectures without innovative mindshare. Holisticly
-                    enhance frictionless e-services for enabled total linkage. Credibly actualize equity invested
-                    e-tailers for client-focused relationships. Globally evolve adaptive technologies through strategic
-                    niches. Quickly synergize best-of-breed customer service after 24/365 functionalities.
-                  </div>
-                </li>
+                {% endfor %}
+                {% endif %}
               </ul>
             </div>
           </div>

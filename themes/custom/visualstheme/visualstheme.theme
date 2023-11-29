@@ -33,6 +33,13 @@ function visualstheme_preprocess_page__front(&$variables) {
 
   // Add the nodes to the page variables.
   $variables['second_committee_nodes'] = $sc_nodes;
+
+    // Load nodes of type 'national assembly schedule'.
+  $nat_schedule_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'national_assembly_schedule', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['nat_schedule'] = $nat_schedule_nodes;
 }
 
 
