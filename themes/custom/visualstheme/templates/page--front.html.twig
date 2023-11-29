@@ -105,38 +105,47 @@
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-tab-1" role="tabpanel" aria-labelledby="pills-tab-1-tab"
           tabindex="0">
+          {# Check if there are any nodes of type 'national_assembly_schedule' #}
+          {% if nat_schedule_by_date %}
           <div class="schedule-title">
             <p>National Assembly Schedule</p>
           </div>
           <div class="splide schedule">
             <div class="splide__track">
               <ul class="splide__list">
-                {% if nat_schedule %}
-                {% for node in nat_schedule %}
+                {# Loop through each date #}
+                {% for date, nodes in nat_schedule_by_date %}
                 <li class="splide__slide">
                   <div class="schedule-date">
-                    {% set event_date = node.field_time.value|date('D, d M Y') %}
-                    {% if node.field_time.value|date('Y-m-d') != 'now'|date('Y-m-d') %}
-                    {% set event_date = node.field_time.value|date('l, d M Y') %}
+                    {# Check if the date is today #}
+                    {% if date == "now"|date('Y-m-d') %}
+                    <p>Today{{ date|date(', d M Y') }}</p>
                     {% else %}
-                    {% set event_date = 'Today, ' ~ node.field_time.value|date('d M Y') %}
+                    {# Format the date as "Thu, 30 Nov 2023" #}
+                    <p>{{ date|date('D, d M Y') }}</p>
                     {% endif %}
-                    <p>{{ event_date }}</p>
                   </div>
+
+                  {# Loop through nodes with the same date #}
+                  {% for node in nodes %}
                   <div class="tab-info">
                     <div>
-                      <p class="schedule-time"> {{ node.field_time.value|date('H:i') }} </p>
-                      <p class="schedule-topic"> {{ node.title.value }} </p>
+                      <p class="schedule-time">{{ node.field_time.value|date('H:i') }}</p>
+                      <p class="schedule-topic">{{ node.label() }}</p>
                     </div>
                   </div>
+                  {% endfor %}
                 </li>
                 {% endfor %}
-                {% endif %}
               </ul>
             </div>
           </div>
+          {% else %}
+          <p>No National Assembly Schedule nodes found.</p>
+          {% endif %}
 
         </div>
+
         <div class="tab-pane fade" id="pills-tab-2" role="tabpanel" aria-labelledby="pills-tab-2-tab" tabindex="0">
           <div class="schedule-title">
             <p>Tab 2 Schedule</p>
@@ -187,9 +196,11 @@
                     <p>Wed, 17 Nov 2023</p>
                   </div>
                   <div class="tab-info">
-                    Assertively re-engineer economically sound architectures without innovative mindshare. Holisticly
+                    Assertively re-engineer economically sound architectures without innovative mindshare.
+                    Holisticly
                     enhance frictionless e-services for enabled total linkage. Credibly actualize equity invested
-                    e-tailers for client-focused relationships. Globally evolve adaptive technologies through strategic
+                    e-tailers for client-focused relationships. Globally evolve adaptive technologies through
+                    strategic
                     niches. Quickly synergize best-of-breed customer service after 24/365 functionalities.
                   </div>
                 </li>
