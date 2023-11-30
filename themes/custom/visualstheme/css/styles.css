@@ -155,9 +155,15 @@ ul.splide__pagination {
   width: 0;
 }
 
-p.schedule-topic,
-p.schedule-time {
+.schedule-topic,
+.schedule-time {
   margin-left: 2em;
+}
+
+.schedule-topic {
+  color: var(--green);
+  text-decoration: underline;
+  margin-bottom: 1.5em;
 }
 
 .news-title {

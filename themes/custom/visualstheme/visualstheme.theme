@@ -12,12 +12,14 @@ function visualstheme_preprocess_page__front(&$variables) {
   // Add the nodes to the page variables.
   $variables['national_assembly_nodes'] = $na_nodes;
 
+
   // Load nodes of type 'senate'.
   $senate_nodes = \Drupal::entityTypeManager()->getStorage('node')
     ->loadByProperties(['type' => 'senate', 'status' => 1]);
 
   // Add the nodes to the page variables.
   $variables['senate_nodes'] = $senate_nodes;
+
 
    // Load nodes of type 'first committee'.
   $fc_nodes = \Drupal::entityTypeManager()->getStorage('node')
@@ -34,8 +36,8 @@ function visualstheme_preprocess_page__front(&$variables) {
   // Add the nodes to the page variables.
   $variables['second_committee_nodes'] = $sc_nodes;
 
-  // Load nodes of type 'national assembly schedule'.
 
+  // Load nodes of type 'national assembly schedule'.
  $nat_schedule_nodes = \Drupal::entityTypeManager()->getStorage('node')
     ->loadByProperties(['type' => 'national_assembly_schedule', 'status' => 1]);
 
@@ -50,7 +52,24 @@ function visualstheme_preprocess_page__front(&$variables) {
 
   // Add the organized nodes to the page variables.
   $variables['nat_schedule_by_date'] = $nodes_by_date;
-}
 
+
+  // Load nodes of type 'national assembly schedule'.
+ $sen_schedule_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'senate_assembly_schedule', 'status' => 1]);
+
+  // Organize nodes by date.
+  $nodes_by_date = [];
+  foreach ($sen_schedule_nodes as $node) {
+    $date = $node->get('field_date')->value;
+    $formatted_date = date('Y-m-d', strtotime($date));
+
+    $nodes_by_date[$formatted_date][] = $node;
+  }
+
+  // Add the organized nodes to the page variables.
+  $variables['sen_schedule_by_date'] = $nodes_by_date;
+
+}
 
 ?>
