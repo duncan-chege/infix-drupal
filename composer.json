@@ -24,7 +24,8 @@
         "drupal/entity": "^1.4",
         "drupal/fullcalendar_view": "^5.1",
         "drupal/smart_date": "^4.0",
-        "drupal/smart_date_starter_kit": "^2.2"
+        "drupal/smart_date_starter_kit": "^2.2",
+        "drupal/twig_tweak": "^3.2"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -49,19 +49,16 @@ input.form-control.me-2 {
   object-fit: cover;
 }
 
-.splide.schedule .splide__arrows.splide__arrows--ltr,
-.splide.schedule-2 .splide__arrows.splide__arrows--ltr {
+.splide.schedule .splide__arrows.splide__arrows--ltr {
   position: relative;
   top: 16px;
 }
 
-.splide.schedule .splide__arrow--next,
-.splide.schedule-2 .splide__arrow--next {
+.splide.schedule .splide__arrow--next {
   right: 8em;
 }
 
-.splide.schedule .splide__arrow--prev,
-.splide.schedule-2 .splide__arrow--prev {
+.splide.schedule .splide__arrow--prev {
   left: 8em;
 }
 
@@ -97,7 +94,7 @@ ul.splide__pagination {
 
 .tab-content {
   box-shadow: 0px 5px 8px 6px #00000017;
-  padding: 1em 2em;
+  padding: 1em;
 }
 
 .tab-content>.active {
@@ -115,6 +112,10 @@ ul.splide__pagination {
   background-color: var(--lightgreen);
   border-radius: 0;
   border: 2px solid var(--lightgreen);
+}
+
+.schedule-bloc .fc-scroller {
+  height: 350px !important;
 }
 
 .schedule-title p {
@@ -443,13 +444,11 @@ hr {
     height: 100%;
   }
 
-  .splide.schedule .splide__arrow--next,
-  .splide.schedule-2 .splide__arrow--next {
+  .splide.schedule .splide__arrow--next {
     right: -1em;
   }
 
-  .splide.schedule .splide__arrow--prev,
-  .splide.schedule-2 .splide__arrow--prev {
+  .splide.schedule .splide__arrow--prev {
     left: -1em;
   }
 }

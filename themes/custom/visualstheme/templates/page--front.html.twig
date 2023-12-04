@@ -105,88 +105,11 @@
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-tab-1" role="tabpanel" aria-labelledby="pills-tab-1-tab"
           tabindex="0">
-          {# Check if there are any nodes of type 'national_assembly_schedule' #}
-          {% if nat_schedule_by_date %}
-          <div class="schedule-title">
-            <p>National Assembly Schedule</p>
-          </div>
-          <div class="splide schedule">
-            <div class="splide__track">
-              <ul class="splide__list">
-                {# Loop through each date #}
-                {% for date, nodes in nat_schedule_by_date %}
-                <li class="splide__slide">
-                  <div class="schedule-date">
-                    {# Check if the date is today #}
-                    {% if date == "now"|date('Y-m-d') %}
-                    <p>Today{{ date|date(', d M Y') }}</p>
-                    {% else %}
-                    {# Format the date as "Thu, 30 Nov 2023" #}
-                    <p>{{ date|date('D, d M Y') }}</p>
-                    {% endif %}
-                  </div>
-
-                  {# Loop through nodes with the same date #}
-                  {% for node in nodes %}
-                  <div class="tab-info">
-                    <div>
-                      <p class="schedule-time">{{ node.field_time.value|date('H:i') }}</p>
-                      <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"
-                        class="schedule-topic">{{ node.label() }}</a>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          {% else %}
-          <p> No National Assembly Sittings scheduled</p>
-          {% endif %}
-
+          <div class="na-calendar-view">{{ (drupal_view('national_assembly_calendar', 'default')) }}</div>
         </div>
 
         <div class="tab-pane fade" id="pills-tab-2" role="tabpanel" aria-labelledby="pills-tab-2-tab" tabindex="0">
-          {# Check if there are any nodes of type 'senate_assembly_schedule' #}
-          {% if sen_schedule_by_date %}
-          <div class="schedule-title">
-          <p>Senate Schedule</p>
-          </div>
-          <div class="splide schedule-2">
-            <div class="splide__track">
-              <ul class="splide__list">
-                {# Loop through each date #}
-                {% for date, nodes in sen_schedule_by_date %}
-                <li class="splide__slide">
-                  <div class="schedule-date">
-                    {# Check if the date is today #}
-                    {% if date == "now"|date('Y-m-d') %}
-                    <p>Today{{ date|date(', d M Y') }}</p>
-                    {% else %}
-                    {# Format the date as "Thu, 30 Nov 2023" #}
-                    <p>{{ date|date('D, d M Y') }}</p>
-                    {% endif %}
-                  </div>
-
-                  {# Loop through nodes with the same date #}
-                  {% for node in nodes %}
-                  <div class="tab-info">
-                    <div>
-                      <p class="schedule-time">{{ node.field_time.value|date('H:i') }}</p>
-                      <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"
-                        class="schedule-topic">{{ node.label() }}</a>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          {% else %}
-          <p> No Senate Sittings scheduled</p>
-          {% endif %}
+          <div class="senate-calendar-view">{{ (drupal_view('senate_calendar', 'default')) }}</div>
         </div>
       </div>
     </div>
@@ -230,6 +153,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="level-btns d-flex flex-nowrap">
     <a href="#" class="level-a">LEVEL A</a>
@@ -536,7 +460,6 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <div class="footer">
