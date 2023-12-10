@@ -73,7 +73,7 @@
     {% if all_nodes %}
     {% for node in all_nodes %}
     <li>
-      <h5>{{ node.title.value }}</h5>
+      <h4>{{ node.title.value }}</h4>
       {% if node.body %}
       <p class="m-0">
         {{ node.body.summary ? node.body.summary|striptags|split(' ')|slice(0, 10)|join(' ') ~ '...' : node.body.value|striptags|split(' ')|slice(0, 10)|join(' ') ~ '...' }}
