@@ -67,22 +67,22 @@
     <img src="{{ base_path ~ directory }}/images/horn.png" alt="" />
     <h5 class="pt-3">NOTICES</h5>
   </div>
-  <div class="scroll-text">
+  <ul class="notice-slider">
     {% set all_nodes = national_assembly_nodes|merge(senate_nodes) %}
 
     {% if all_nodes %}
     {% for node in all_nodes %}
-    <div>
+    <li>
       <h5>{{ node.title.value }}</h5>
       {% if node.body %}
-      <p>
+      <p class="m-0">
         {{ node.body.summary ? node.body.summary|striptags|split(' ')|slice(0, 10)|join(' ') ~ '...' : node.body.value|striptags|split(' ')|slice(0, 10)|join(' ') ~ '...' }}
       </p>
       {% endif %}
-    </div>
+    </li>
     {% endfor %}
     {% endif %}
-  </div>
+  <ul>
 </div>
 
 <div class="container">
@@ -121,16 +121,18 @@
       <div class="news-block">
         <img src="{{ base_path ~ directory }}/images/slide-1.png" />
         <div class="first-news-block">
-          <p> National Assembly</p>
+          <p>National Assembly</p>
           {% if national_assembly_nodes %}
-          {% for node in national_assembly_nodes %}
-          <div>
-            <h5>{{ node.title.value }}</h5>
-            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Learn More
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-          {% endfor %}
+          <ul class="na-slider">
+            {% for node in national_assembly_nodes %}
+            <li>
+              <h5>{{ node.title.value }}</h5>
+              <a id="link-{{ node.id }}" href="{{ path('entity.node.canonical', {'node': node.id}) }}">Learn More
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
           {% endif %}
         </div>
       </div>
@@ -140,14 +142,16 @@
         <div class="second-news-block">
           <p> Senate </p>
           {% if senate_nodes %}
-          {% for node in senate_nodes %}
-          <div>
-            <h5>{{ node.title.value }}</h5>
-            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Learn More
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-          {% endfor %}
+          <ul class="senate-slider">
+            {% for node in senate_nodes %}
+            <li>
+              <h5>{{ node.title.value }}</h5>
+              <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Learn More
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
           {% endif %}
         </div>
       </div>

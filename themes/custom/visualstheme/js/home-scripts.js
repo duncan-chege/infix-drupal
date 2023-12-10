@@ -6,16 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     speed: 300,
   });
   splide_hero.mount();
-
-  let splide_schedule = new Splide('.splide.schedule',{
-    pagination: false,
-  });
-  splide_schedule.mount();
-
-  let splide_schedule_2 = new Splide('.splide.schedule-2',{
-    pagination: false,
-  });
-  splide_schedule_2.mount();
 });
 
 function handleMouseMove(event) {
@@ -53,28 +43,34 @@ svgElement.addEventListener("mouseleave", function () {
 });
 
 
-function startFadingContent(selector, totalDivs, interval) {
-  var divs = document.querySelectorAll(selector);
-  var currentIndex = 0;
+let na_index = 0;
+let senate_index = 0;
+let notice_index = 0;
 
-  function displayDivs() {
-    currentIndex = currentIndex % totalDivs;
+const na_items = document.querySelectorAll('.na-slider li');
+const senate_items = document.querySelectorAll('.senate-slider li');
+const notice_items = document.querySelectorAll('.notice-slider li');
 
-    divs.forEach(function (div, i) {
-      div.style.opacity = i === currentIndex ? 1 : 0;
-    });
+setInterval(() => {
+  // Hide the current list item
+  na_items[na_index].classList.remove('ease-in');
 
-    setTimeout(function () {
-      currentIndex++;
-      displayDivs();
-    }, interval);
-  }
+  // Move to the next list item, or loop back to the start
+  na_index = (na_index + 1) % na_items.length;
 
-  // Start the display process
-  displayDivs();
-}
+  // Show the next list item
+  na_items[na_index].classList.add('ease-in');
 
-// Example usage
-startFadingContent('.first-news-block > div', document.querySelectorAll('.first-news-block > div').length, 3000);
-startFadingContent('.second-news-block > div', document.querySelectorAll('.second-news-block > div').length, 3000);
-startFadingContent('.scroll-text > div', document.querySelectorAll('.scroll-text > div').length, 3000);
+  senate_items[senate_index].classList.remove('ease-in');
+
+  senate_index = (senate_index + 1) % senate_items.length;
+
+  senate_items[senate_index].classList.add('ease-in');
+  
+  notice_items[notice_index].classList.remove('ease-in');
+
+  notice_index = (notice_index + 1) % notice_items.length;
+
+  notice_items[notice_index].classList.add('ease-in');
+  
+}, 3000);
