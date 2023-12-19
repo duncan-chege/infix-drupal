@@ -1,0 +1,99 @@
+.top-banner{
+    padding: 3em 0 0;
+    background: var(--green);
+}
+
+.top-banner h1 {
+    color: #fff;
+    padding: 0 2.7em;
+}
+
+.breadcrumb-box {
+    padding: .8em 6.8em;
+    margin-bottom: 0;
+    background: #749f7e;
+}
+
+.breadcrumb-box a {
+    color: #fff;
+}
+
+.breadcrumb-box a::after {
+    content: ">>";
+    padding-left: 5px;
+}
+
+.breadcrumb-box a:last-child::after {
+    content: "";
+}
+
+.archive-mp-content {
+    margin: 2em 0;
+}
+
+.archive-mp-content h3 {
+    color: var(--green);
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.filter-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-box button{
+    width: 350px;
+    position: relative;
+    text-align: left;
+}
+
+.dropdown-toggle::after{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+.filter-box button:last-child {
+    width: 150px;
+    text-align: center;
+}
+
+.mp-list {
+    margin-top: 4em !important;
+}
+
+.mp-card{
+    border-left: 10px solid var(--green);
+    display: flex;
+    padding-left: 1em;
+    margin-bottom: 2em;
+    box-shadow: 4px 4px 5px 0px #e7e5e5;
+}
+
+.mp-card>div:nth-child(2) {
+    padding-left: 1em;
+}
+
+.mp-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.mp-card p:nth-child(1) {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: dimgray;
+    margin: 5px 0;
+}
+
+.mp-card p:nth-child(2)::after{
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    border-bottom: 1px solid dimgray;
+}

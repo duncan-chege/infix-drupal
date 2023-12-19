@@ -9,9 +9,40 @@
 
 <body>
   {{ page.header }}
+  <div class="top-banner">
+    <h1> Parliament of Kenya </h1>
+    <div class="breadcrumb-box">
+      <a href="#"> Parliament</a>
+      <a href="#"> National Assembly</a>
+      <a href="#"> Members of Parliament</a>
+    </div>
+  </div>
 
-  <div class="view-content">
-    {{ page.content }}
+  <div class="archive-mp-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3> Find MPs </h3>
+          <div class="filter-box">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Name
+            </button>
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Constituency
+            </button>
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Party
+            </button>
+            <button type="button" class="btn btn-success">Filter</button>
+          </div>
+          
+          {{ page.content }}
+        </div>
+      </div>
+    </div>
   </div>
 
   {{ page.footer }}
