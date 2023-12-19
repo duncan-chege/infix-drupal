@@ -67,6 +67,7 @@
     border-left: 10px solid var(--green);
     display: flex;
     padding-left: 1em;
+    padding-right: 1em;
     margin-bottom: 2em;
     box-shadow: 4px 4px 5px 0px #e7e5e5;
 }
@@ -86,8 +87,11 @@
 .mp-card p:nth-child(1) {
     font-weight: 600;
     font-size: 1.2em;
-    color: dimgray;
     margin: 5px 0;
+}
+
+.mp-card p, .mp-card i{
+    color: dimgray;
 }
 
 .mp-card p:nth-child(2)::after{
@@ -96,4 +100,14 @@
     width: 100%;
     padding-top: 10px;
     border-bottom: 1px solid dimgray;
+}
+
+.mp-card>div:last-child{
+    flex-grow: 1;
+    align-self: center;
+    text-align: end;
+}
+
+.mp-card i {
+    font-size: 2em;
 }
