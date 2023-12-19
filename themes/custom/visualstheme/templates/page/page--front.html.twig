@@ -8,43 +8,8 @@
 </head>
 
 <body>
-  <div class="first-nav yes container d-flex justify-content-between">
-    <a class="navbar-brand align-self-center" href="#"><img src="{{ base_path ~ directory }}/images/logo-ex.png"
-        alt="" /></a>
-    <div class="d-flex search-social-links align-items-center">
-      <form role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-      </form>
-      <i class="bi bi-facebook px-3" style="font-size: 1.5rem"></i>
-      <i class="bi bi-instagram px-0" style="font-size: 1.5rem"></i>
-    </div>
-  </div>
+  {{ page.header }}
 
-  <nav class="second-nav navbar navbar-expand-lg pb-0">
-    <a class="navbar-brand align-self-center d-block d-sm-none" href="#"><img
-        src="{{ base_path ~ directory }}/images/logo-ex.png" alt="" /></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav d-flex justify-content-evenly w-100 py-1">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Menu 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Menu 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Menu 3</a>
-        </li>
-      </ul>
-    </div>
-    </div>
-
-
-  </nav>
-  
   <div class="hero-section">
     <div class="splide hero-images" role="group" aria-label="Image Carousel">
       <div class="splide__track">
@@ -466,84 +431,7 @@
     </div>
   </div>
 
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col mb-1">
-          <img src="{{ base_path ~ directory }}/images/logo-ex.png" alt="" />
-        </div>
-
-        <div class="col mb-2">
-          <h5>Site Name</h5>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Level A</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="#" data-replace="Home">
-                <span>Home<span></a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">Features</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">Pricing</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">FAQs</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">About</a>
-            </li>
-          </ul>
-          </li>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Level B</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="#">Home</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">Features</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">Pricing</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">FAQs</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">About</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Quick Links</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="#">Home</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">Features</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">Pricing</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">FAQs</a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  {{ page.footer }}
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

@@ -8,42 +8,11 @@
 </head>
 
 <body>
-  <div class="first-nav yes container d-flex justify-content-between">
-    <a class="navbar-brand align-self-center" href="#"><img src="{{ base_path ~ directory }}/images/logo-ex.png"
-        alt="" /></a>
-    <div class="d-flex search-social-links align-items-center">
-      <form role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-      </form>
-      <i class="bi bi-facebook px-3" style="font-size: 1.5rem"></i>
-      <i class="bi bi-instagram px-0" style="font-size: 1.5rem"></i>
-    </div>
-  </div>
-
-  <nav class="second-nav navbar navbar-expand-lg pb-0">
-    <a class="navbar-brand align-self-center d-block d-sm-none" href="#"><img
-        src="{{ base_path ~ directory }}/images/logo-ex.png" alt="" /></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav d-flex justify-content-evenly w-100 py-1">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Menu 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Menu 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Menu 3</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  {{ page.header }}
 
   <div class="view-content">
     {{ page.content }}
   </div>
 
+  {{ page.footer }}
 </body>
