@@ -8,3 +8,9 @@ core_version_requirement: ^9 || ^10
 libraries:
   - visualstheme/global-library
   - visualstheme/homepage-js
+
+regions:
+  header: 'Header'
+  top_banner: 'Top Banner'
+  content: 'Content'
+  footer: 'Footer'
