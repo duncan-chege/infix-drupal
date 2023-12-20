@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infix Drupal site</title>
+</head>
+
+<body>
+  <div class="top-banner">
+    <h1> Parliament of Kenya </h1>
+    <div class="breadcrumb-box">
+      <a href="#"> Parliament</a>
+      <a href="#"> National Assembly</a>
+      <a href="#"> Members of Parliament</a>
+    </div>
+  </div>
+
+  <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+    <div class="mp-card">
+      <div>
+        {% set image_url = file_url(node.field_mp_image.entity.uri.value) %}
+
+        {% if image_url %}
+        <img src="{{ image_url }}" alt="{{ node.field_mp_image.alt }}">
+        {% else %}
+        <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
+        {% endif %}
+      </div>
+      <div>
+        <p>{{ label }}</p>
+        <p>{{ node.field_political_party.value }}</p>
+        <p>{{ node.field_constituency.value }}</p>
+      </div>
+      <div>
+        <i class="bi bi-chevron-right"></i>
+      </div>
+    </div>
+  </a>
+
+</body>

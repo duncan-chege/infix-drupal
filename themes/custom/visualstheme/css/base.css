@@ -37,7 +37,7 @@ input.form-control.me-2 {
   color: #fff !important;
 }
 
-.region-footer {
+.region-content,.region-footer {
   padding: 0;
 }
 

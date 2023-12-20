@@ -1,6 +1,7 @@
 <div class="first-nav yes container d-flex justify-content-between">
-  <a class="navbar-brand align-self-center" href="#"><img src="{{ base_path ~ directory }}/images/national assembly logo.svg"
-      alt="" /></a>
+  <a class="navbar-brand align-self-center" href="{{ url('<front>') }}">
+    <img src="{{ base_path ~ directory }}/images/national-assembly-logo.svg"alt="" />
+  </a>
   <div class="d-flex search-social-links align-items-center">
     <form role="search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -11,8 +12,9 @@
 </div>
 
 <nav class="second-nav navbar navbar-expand-lg pb-0">
-  <a class="navbar-brand align-self-center d-block d-sm-none" href="#"><img
-      src="{{ base_path ~ directory }}/images/national assembly logo.svg" alt="" /></a>
+  <a class="navbar-brand align-self-center d-block d-sm-none" href="{{ url('<front>') }}">
+    <img src="{{ base_path ~ directory }}/images/national-assembly-logo.svg" alt="" />
+  </a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
