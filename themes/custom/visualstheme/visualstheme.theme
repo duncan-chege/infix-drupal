@@ -35,7 +35,6 @@ function visualstheme_preprocess_page__front(&$variables) {
 
   // Add the nodes to the page variables.
   $variables['second_committee_nodes'] = $sc_nodes;
-
 }
 
 ?>

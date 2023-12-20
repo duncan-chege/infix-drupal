@@ -1,41 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Work+Sans:wght@400;500;900&display=swap");
-
-:root {
-  --blue: #17195c;
-  --green: #006810;
-  --lightblue: #4272e7;
-  --lightgreen: #30c856;
-  --grey: #494949;
-}
-
-body {
-  font-family: "Onest", sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  width: 100%;
-}
-
-input.form-control.me-2 {
-  border-radius: 25px;
-}
-
-.navbar-brand img {
-  height: 80px;
-}
-
-.navbar-nav {
-  background-color: var(--green);
-}
-
-.navbar .nav-link {
-  color: #fff !important;
-}
-
 .splide.hero-images {
   height: 70vh;
 }
@@ -408,40 +370,4 @@ hr {
   z-index: 1;
   padding: 5px;
   font-size: 14px;
-}
-
-.region-footer{
-  padding: 0;
-}
-
-.footer {
-  padding: 3em;
-  background: var(--green);
-  margin-top: 4em;
-}
-
-.footer img {
-  width: 120px;
-}
-
-.footer h5 {
-  color: #fff;
-}
-
-.footer a {
-  color: #b4ffc7;
-  display: inline-block;
-}
-
-.footer a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #baffc7;
-  transition: width 0.3s ease-in;
-}
-
-.footer a:hover::after {
-  width: 100%;
 }

@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "drupal/better_exposed_filters": "^6.0",
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
@@ -25,6 +26,7 @@
         "drupal/fullcalendar_view": "^5.1",
         "drupal/smart_date": "^4.0",
         "drupal/smart_date_starter_kit": "^2.2",
+        "drupal/stringoverrides": "^1.8",
         "drupal/twig_tweak": "^3.2"
     },
     "conflict": {
