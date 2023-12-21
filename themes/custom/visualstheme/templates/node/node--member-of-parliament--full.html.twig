@@ -9,7 +9,7 @@
 
 <body>
   <div class="top-banner">
-    <h1> Parliament of Kenya </h1>
+    <h1> Members of Parliament </h1>
     <div class="breadcrumb-box">
       <a href="#"> Parliament</a>
       <a href="#"> National Assembly</a>
@@ -17,26 +17,25 @@
     </div>
   </div>
 
-  <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
-    <div class="mp-card">
-      <div>
-        {% set image_url = file_url(node.field_mp_image.entity.uri.value) %}
+  <div class="mp-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 d-flex flex-column justify-content-center">
+          {% set image_url = file_url(node.field_mp_image.entity.uri.value) %}
+          <div>
+            <h2>{{ label }}</h2>
+            <p> The Hon. {{ label }} is the MP for {{ node.field_constituency.value }} and has been an MP since {{ node.field_official_mp_date.value|date('j F, Y') }}</p>
+          </div>
+        </div>
 
-        {% if image_url %}
-        <img src="{{ image_url }}" alt="{{ node.field_mp_image.alt }}">
-        {% else %}
-        <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
-        {% endif %}
-      </div>
-      <div>
-        <p>{{ label }}</p>
-        <p>{{ node.field_political_party.value }}</p>
-        <p>{{ node.field_constituency.value }}</p>
-      </div>
-      <div>
-        <i class="bi bi-chevron-right"></i>
+        <div class="col-md-2">
+          {% if image_url %}
+          <img src="{{ image_url }}" alt="{{ node.field_mp_image.alt }}">
+          {% else %}
+          <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
+          {% endif %}
+        </div>
       </div>
     </div>
-  </a>
-
+  </div>
 </body>

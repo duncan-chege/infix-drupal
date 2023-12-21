@@ -24,6 +24,7 @@
         "drupal/devel": "^5.0",
         "drupal/entity": "^1.4",
         "drupal/fullcalendar_view": "^5.1",
+        "drupal/pathauto": "^1.12",
         "drupal/smart_date": "^4.0",
         "drupal/smart_date_starter_kit": "^2.2",
         "drupal/stringoverrides": "^1.8",
