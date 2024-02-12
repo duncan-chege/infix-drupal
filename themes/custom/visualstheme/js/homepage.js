@@ -6,6 +6,30 @@ document.addEventListener("DOMContentLoaded", function () {
     speed: 300,
   });
   splide_hero.mount();
+
+  let splide_committee = new Splide('.splide.committee-articles', {
+    type   : 'loop',
+    pagination: false,
+    drag   : 'free',
+    focus  : 'center',
+    perPage: 3,
+    autoScroll: {
+      speed: 1,
+    },
+  });
+  splide_committee.mount(window.splide.Extensions);
+
+  let second_splide_committee = new Splide('.splide.second-committee-articles', {
+    type   : 'loop',
+    pagination: false,
+    drag   : 'free',
+    focus  : 'center',
+    perPage: 3,
+    autoScroll: {
+      speed: 1,
+    },
+  });
+  second_splide_committee.mount(window.splide.Extensions);
 });
 
 function handleMouseMove(event) {

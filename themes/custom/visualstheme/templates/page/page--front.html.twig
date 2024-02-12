@@ -47,7 +47,7 @@
       </li>
       {% endfor %}
       {% endif %}
-      </ul>
+    </ul>
   </div>
 
   <div class="container">
@@ -125,8 +125,8 @@
 
 
     <div class="level-btns d-flex flex-nowrap">
-      <a href="#" class="level-a">LEVEL A</a>
-      <a href="#" class="level-b">LEVEL B</a>
+      <a href="#" class="level-a">NATIONAL ASSEMBLY</a>
+      <a href="#" class="level-b">SENATE</a>
     </div>
     <hr />
     <div class="committee-work">
@@ -134,33 +134,48 @@
       <div class="container">
         <div class="row">
           {% if committee_nodes %}
-          {% for node in committee_nodes %}
-          <div class="col-md-4">
-            <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
-            <h5> {{ node.title.value }} </h5>
-            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
+          <div class="splide committee-articles">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for node in committee_nodes %}
+                <li class="splide__slide px-3">
+                    <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
+                    <h5> {{ node.title.value }} </h5>
+                    <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
-          {% endfor %}
           {% endif %}
         </div>
       </div>
     </div>
+
     <div class="two-committee-work">
       <h2>SECOND COMMITTEE WORK</h2>
       <div class="container">
         <div class="row">
           {% if second_committee_nodes %}
-          {% for node in second_committee_nodes %}
-          <div class="col-md-4">
-            <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
-            <h5> {{ node.title.value }} </h5>
-            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
+          <div class="splide second-committee-articles">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for node in second_committee_nodes %}
+                  <li class="splide__slide px-3">
+                    <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
+                    <h5> {{ node.title.value }} </h5>
+                    <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
-          {% endfor %}
           {% endif %}
         </div>
       </div>
     </div>
+
+
     <div class="container">
       <div class="row">
         <div class="col-md-5">
@@ -438,6 +453,10 @@
   </script>
 
   <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
+  </script>
 
 </body>
 

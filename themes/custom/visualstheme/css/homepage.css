@@ -260,6 +260,14 @@ ul.splide__pagination {
   background-color: var(--blue);
 }
 
+.splide.committee-articles .splide__arrow--prev, .splide.second-committee-articles .splide__arrow--prev {
+  left: -3em;
+}
+
+.splide.committee-articles .splide__arrow--next, .splide.second-committee-articles  .splide__arrow--next {
+  right: -3em;
+}
+
 .committee-work {
   margin: 5em 0 3em;
 }
