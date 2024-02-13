@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  {{ page.header }}
+
+  <div class="hero-section">
+    <div class="splide hero-images" role="group" aria-label="Image Carousel">
+      <div class="splide__track">
+        {% if journal_nodes %}
+        <ul class="splide__list">
+          {% for node in journal_nodes %}
+          <li class="splide__slide">
+            <img src="{{ file_url(node.field_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
+            <div class="title-link">
+              <h2> {{ node.title.value }} </h2>
+              <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="speaker-bloc">
+     <img src="{{ base_path ~ directory }}/images/moses-wetangula.png" alt="" />
+  </div>
+
+  {{ page.footer }}
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+
+  <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
+  </script>
+
+</body>
+
+</html>

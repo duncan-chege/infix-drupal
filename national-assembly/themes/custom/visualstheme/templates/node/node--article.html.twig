@@ -1,0 +1,12 @@
+{% extends base %}
+
+
+{% block node %}
+  <article class="node-article">
+    <h1 class="node-article__title">{{ node.title }}</h1>
+
+    <div class="node-article__body">
+      {{ node.body | raw }}
+    </div>
+  </article>
+{% endblock %}

@@ -1,0 +1,17 @@
+name: visualstheme
+type: theme
+base theme: 'bootstrap5'
+description: 'A custom theme for Infix Africa'
+package: Custom
+core_version_requirement: ^9 || ^10
+
+libraries:
+  - visualstheme/global-library
+  - visualstheme/homepage-js
+  - visualstheme/archivemps-js
+
+regions:
+  header: 'Header'
+  top_banner: 'Top Banner'
+  content: 'Content'
+  footer: 'Footer'

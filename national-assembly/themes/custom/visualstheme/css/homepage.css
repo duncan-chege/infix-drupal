@@ -1,0 +1,54 @@
+.splide.hero-images {
+  height: 70vh;
+}
+
+.splide__track {
+  height: 100%;
+}
+
+.splide__slide img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.splide.schedule .splide__arrows.splide__arrows--ltr {
+  position: relative;
+  top: 16px;
+}
+
+.splide.schedule .splide__arrow--next {
+  right: 8em;
+}
+
+.splide.schedule .splide__arrow--prev {
+  left: 8em;
+}
+
+.hero-section li{
+  position: relative;
+}
+
+.title-link{
+  position: absolute;
+  bottom: 2em;
+  margin: 0 4em;
+}
+
+.title-link h2 {
+  text-transform: capitalize;
+  color: #fff;
+  text-shadow: 1px 1px 6px #0000009c;
+}
+
+.title-link a {
+  background: #da0404;
+  color: #fff;
+  padding: 10px 18px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.speaker-bloc img {
+  height: 500px;
+  object-fit: contain;
+}

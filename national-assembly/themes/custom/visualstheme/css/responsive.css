@@ -1,0 +1,97 @@
+/* Device: Tablets & Mobile Phones */
+@media (max-width: 1024px) {
+  .splide.hero-images {
+    height: 50vh;
+  }
+
+  .youtube-video {
+    padding-bottom: 75%;
+  }
+
+  .news-block {
+    height: 150px;
+  }
+
+  .news-block img {
+    height: 100%;
+  }
+
+  .splide.schedule .splide__arrow--next {
+    right: -1em;
+  }
+
+  .splide.schedule .splide__arrow--prev {
+    left: -1em;
+  }
+
+  .mp-list {
+    margin-top: 2em;
+  }
+
+  .mp-card>div:last-child {
+    align-self: flex-end;
+    padding-bottom: 0.5em;
+  }
+
+  .mp-card i {
+    font-size: 1.5em;
+  }
+}
+
+/* Device = Tablets, Ipads (portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #views-exposed-form-members-of-parliament-page-1 .form-item {
+    width: 200px;
+  }
+
+  input#edit-submit-members-of-parliament {
+    margin-top: 1em;
+  }
+}
+
+/* Device = Mobile Phones (portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+  .first-nav {
+    display: none !important;
+  }
+
+  .notices-block img {
+    width: 50px;
+  }
+
+  .notices-block * {
+    font-size: 1em;
+  }
+
+  .notice-slider {
+    padding: 0em 0em 0 2em !important;
+  }
+
+  .news-title {
+    margin-top: 2em;
+  }
+
+  .level-btns {
+    margin-top: 2em;
+  }
+
+  .top-banner {
+    padding: 1em 0 0;
+  }
+
+  .top-banner h1 {
+    padding: 0 1em 0.5em 1em;
+  }
+
+  .breadcrumb-box {
+    padding: 0.6em 1em;
+  }
+
+  #views-exposed-form-members-of-parliament-page-1 .form-item {
+    margin: 0 1em 1em 0;
+  }
+
+  input#edit-submit-members-of-parliament {
+    margin-top: 0;
+  }
+}

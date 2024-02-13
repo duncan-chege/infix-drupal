@@ -1,0 +1,47 @@
+<div class="first-nav yes container d-flex justify-content-between">
+  <a class="navbar-brand align-self-center" href="{{ url('<front>') }}">
+    <img src="{{ base_path ~ directory }}/images/national-assembly-logo.svg" alt="" />
+  </a>
+  <div class="d-flex search-social-links align-items-center">
+    <form role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+    </form>
+    <i class="bi bi-facebook px-3" style="font-size: 1.5rem; color: var(--green);"></i>
+    <i class="bi bi-twitter-x px-1" style="font-size: 1.4rem; color: var(--green);"></i>
+  </div>
+</div>
+
+<nav class="second-nav navbar navbar-expand-lg pb-0">
+  <a class="navbar-brand align-self-center d-block d-sm-none" href="{{ url('<front>') }}">
+    <img src="{{ base_path ~ directory }}/images/national-assembly-logo.svg" alt="" />
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-evenly w-100 py-1">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Speaker</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('<front>') }}members-of-parliament">Members of Parliament</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">House Business</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Committees</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Newsroom</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Resources</a>
+      </li>
+    </ul>
+  </div>
+</nav>
