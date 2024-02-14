@@ -30,7 +30,29 @@
   </div>
 
   <div class="speaker-bloc">
-     <img src="{{ base_path ~ directory }}/images/moses-wetangula.png" alt="" />
+    <div class="container">
+      <div class="row d-flex align-items-center mt-5">
+        <div class="col-md-5">
+          <img src="{{ base_path ~ directory }}/images/moses-wetangula.png" alt="" />
+        </div>
+        <div class="col-md-7">
+          <h4 class="fw-bold"> Introducing </h4>
+          <h1 class="fw-bold"> Rt. Hon. (Dr.) Moses M. Wetang'ula, EGH, MP</h1>
+          <img src="{{ base_path ~ directory }}/images/curved-line.svg" alt="" class="curved-line" />
+          <h4 class="fw-bold py-4"> Speaker of the National Assembly </h4>
+          <p> The Rt. Hon. (DR.) Moses M. Wetang'ula, EGH, MP is the 8th Speaker of the National Assembly of Kenya since
+            independence in 1963. He was elected to the position of Speaker on Thursday, 8th September 2022 during the
+            First Sitting of the National Assembly of the 13th Parliament. </p>
+          <a href=""> MORE INFORMATION <img src="{{ base_path ~ directory }}/images/chevron-right.svg" alt=""
+              style="width: 10px; margin-left: 5px;" /> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mps-bloc mt-5">
+    <h1> MEMBERS OF PARLIAMENT </h1>
+    {{ drupal_view('members_of_parliament') }}
   </div>
 
   {{ page.footer }}
