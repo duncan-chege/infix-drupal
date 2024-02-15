@@ -86,7 +86,7 @@
   width: 300px;
 }
 
-input#edit-submit-members-of-parliament {
+#views-exposed-form-members-of-parliament-default .button {
   margin-top: 0.7em;
   padding: 5px 30px;
   background: var(--green);

@@ -52,7 +52,11 @@
 
   <div class="mps-bloc mt-5">
     <h1> MEMBERS OF PARLIAMENT </h1>
-    {{ drupal_view('members_of_parliament') }}
+    <div class="container">
+      <div class="row">
+        {{ drupal_view('members_of_parliament') }}
+      </div>
+    </div>
   </div>
 
   {{ page.footer }}
