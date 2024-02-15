@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
     autoScroll: {
       speed: 1,
     },
+    breakpoints: {
+      1024: {
+        perPage: 2,
+      },
+      640: {
+        perPage: 1,
+      },
+    }
   });
   splide_committee.mount(window.splide.Extensions);
 
@@ -28,6 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
     autoScroll: {
       speed: 1,
     },
+    breakpoints: {
+      1024: {
+        perPage: 2,
+      },
+      640: {
+        perPage: 1,
+      },
+    }
   });
   second_splide_committee.mount(window.splide.Extensions);
 });
