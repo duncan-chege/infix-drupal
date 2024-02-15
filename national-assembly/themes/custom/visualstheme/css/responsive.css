@@ -51,10 +51,6 @@
 
 /* Device = Mobile Phones (portrait) */
 @media (min-width: 320px) and (max-width: 480px) {
-  .first-nav {
-    display: none !important;
-  }
-
   .notices-block img {
     width: 50px;
   }
