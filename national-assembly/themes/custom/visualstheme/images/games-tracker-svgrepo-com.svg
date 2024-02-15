@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #006818;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="games-tracker-svgrepo-com">
+      <rect id="Rectangle_57" data-name="Rectangle 57" class="cls-1" x="1.5" y="1.5" width="22.92" height="37.76"/>
+      <path id="Path_165" data-name="Path 165" class="cls-1" d="M1.5,54.5h22.92v-15.24"/>
+      <path id="Path_166" data-name="Path 166" class="cls-1" d="M54.5,23.9v30.6h-22.92V1.5"/>
+      <line id="Line_40" data-name="Line 40" class="cls-1" x1="54.5" y1="16.74" x2="31.58" y2="16.74"/>
+    </g>
+  </g>
+</svg>

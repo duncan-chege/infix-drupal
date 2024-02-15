@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.1 43.51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #006818;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="paper-and-pen-svgrepo-com">
+      <path id="Path_131" data-name="Path 131" class="cls-1" d="M35.88,40.25H3.26V15.82h12.56V3.26h20.06v3.22l3.26-3.13V0H15.82L3.26,12.56l-3.26,3.26v27.69h39.14v-19.2l-3.26,3.4v12.54Z"/>
+      <path id="Path_132" data-name="Path 132" class="cls-1" d="M48.78,8.59l-4.92-4.92c-.43-.43-1.14-.43-1.57,0h0s-20.78,19.96-20.78,19.96c-.13.13-.22.29-.28.46l-2.51,8.26c-.18.59.15,1.21.74,1.39.21.06.44.06.65,0l8.52-2.59,20.15-20.98c.43-.43.44-1.14,0-1.57,0,0,0,0,0,0ZM23.4,30.7l-1.62-1.77,1.12-3.69,2.79,1.5,1.5,2.79-3.8,1.16ZM45.65,7.8l-17.7,17.82-1.12-1.12L44.64,6.79l1.01,1.01h0Z"/>
+    </g>
+  </g>
+</svg>

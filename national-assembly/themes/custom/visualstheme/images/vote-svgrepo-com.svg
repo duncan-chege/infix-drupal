@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.24 51.62">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #006818;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="vote-svgrepo-com">
+      <path id="Path_145" data-name="Path 145" class="cls-1" d="M10.12,34.12H2.12v16h48v-16h-8"/>
+      <path id="Path_146" data-name="Path 146" class="cls-1" d="M46.12,22.12l4,4-16,16"/>
+      <path id="Path_147" data-name="Path 147" class="cls-1" d="M18.12,42.12L2.12,26.12,26.12,2.12l12,12"/>
+      <line id="Line_39" data-name="Line 39" class="cls-1" x1="10.12" y1="42.12" x2="42.12" y2="42.12"/>
+      <path id="Path_148" data-name="Path 148" class="cls-1" d="M50.12,10.12l-24,24-8-8"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 64.83">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #006818;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="books-study-learning-education-reading-library-svgrepo-com">
+      <path id="Path_119" data-name="Path 119" class="cls-1" d="M1.5,21.38l24.29,15.46,28.71-19.88L30.21,1.5,1.5,21.38Z"/>
+      <path id="Path_120" data-name="Path 120" class="cls-1" d="M1.5,21.38v13.25l24.29,15.46,28.71-19.88h0c-2.66-2.6-3.29-6.65-1.55-9.94l1.55-3.31"/>
+      <path id="Path_121" data-name="Path 121" class="cls-1" d="M1.5,34.62v13.25l24.29,15.46,28.71-19.88h0c-2.66-2.6-3.29-6.65-1.55-9.94l1.55-3.31"/>
+    </g>
+  </g>
+</svg>
