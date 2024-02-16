@@ -90,4 +90,18 @@
   input#edit-submit-members-of-parliament {
     margin-top: 0;
   }
+
+  .level-a, .level-b {
+    margin: 0.5em;
+    padding: 17px 10px;
+    font-size: 18px;
+  }
+
+  .splide.committee-articles .splide__arrow--prev, .splide.second-committee-articles .splide__arrow--prev {
+    left: 0;
+  }
+  
+  .splide.committee-articles .splide__arrow--next, .splide.second-committee-articles  .splide__arrow--next {
+    right: 0;
+  }
 }
