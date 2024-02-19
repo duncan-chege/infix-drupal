@@ -74,6 +74,16 @@
   font-weight: bold;
 }
 
+.mps-bloc h5{
+  color: var(--green);
+}
+
+.mp-list a {
+  color: var(--grey);
+  padding-bottom: 1em;
+  display: block;
+}
+
 .form--inline.clearfix {
   margin: 1em 0 2em;
   display: flex;
