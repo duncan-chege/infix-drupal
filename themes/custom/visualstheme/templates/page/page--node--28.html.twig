@@ -1,0 +1,86 @@
+{# Hall of Leaders Page #}
+
+<body>
+  {{ page.header }}
+  <div class="top-banner">
+    <h1> Parliament of Kenya </h1>
+    <div class="breadcrumb-box">
+      <a href="#"> Parliament</a>
+      <a href="#"> {{ node.title.value }} </a>
+    </div>
+  </div>
+
+  <div class="hall-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2> {{ node.title.value }} </h2>
+          <div class="">
+            {{ page.content }}
+          </div>
+
+          <div class="leaders-display">
+            <div class="splide">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  {% if mp_nodes %}
+                  <div class="row">
+                      {% for node in mp_nodes %}
+                      {% if node.field_parliament_number.value == '13th parliament' %}
+                      <li class="splide__slide">
+                        <div class="col-md-2 text-center">
+                          {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
+
+                          {% if image_url %}
+                          <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
+                          {% else %}
+                          <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
+                          {% endif %}
+                          <p class="mt-2 mb-0">{{ node.title.value }}</p>
+                          <p class="mb-2">{{ node.field_constituency.value }}
+                        </div>
+                      </li>
+                      {% endif %}
+                      {% if node.field_parliament_number.value == '12th parliament' %}
+                      <li class="splide__slide">
+                        <div class="col-md-2 text-center">
+                          {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
+
+                          {% if image_url %}
+                          <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
+                          {% else %}
+                          <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
+                          {% endif %}
+                          <p class="mt-2 mb-0">{{ node.title.value }}</p>
+                          <p class="mb-2">{{ node.field_constituency.value }}
+                        </div>
+                      </li>
+                      {% endif %}
+                      {% endfor %}
+                  </div>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    {{ page.footer }}
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let mps_number = new Splide('.leaders-display>.splide', {
+          type: 'loop',
+          perPage: 1,
+          perMove: 1,
+        });
+
+        mps_number.mount();
+      });
+
+    </script>
+</body>

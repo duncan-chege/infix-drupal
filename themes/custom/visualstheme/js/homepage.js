@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   second_splide_committee.mount(window.splide.Extensions);
+
 });
 
 function handleMouseMove(event) {

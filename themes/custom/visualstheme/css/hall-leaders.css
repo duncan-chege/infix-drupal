@@ -1,0 +1,35 @@
+.leaders-display img:not(.left-motion, .right-motion){
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.leaders-display {
+    margin: 3em 0;
+}
+
+.leaders-display>div:first-of-type {
+    background: #6dbe7a;
+    margin-bottom: 2em;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.leaders-display h3{
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+.left-motion{
+    width: 16px;
+    margin-right: 3em;
+}
+
+.right-motion{
+    width: 16px;
+    margin-left: 3em;
+}

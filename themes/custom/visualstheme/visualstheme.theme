@@ -35,6 +35,19 @@ function visualstheme_preprocess_page__front(&$variables) {
 
   // Add the nodes to the page variables.
   $variables['second_committee_nodes'] = $sc_nodes;
+
+}
+
+function visualstheme_preprocess_page(&$variables){
+  global $request;
+  $current_path = $request->getRequestUri();
+    
+  // Load nodes of type 'members of parliament'.
+    $mp_nodes = \Drupal::entityTypeManager()->getStorage('node')
+      ->loadByProperties(['type' => 'member_of_parliament', 'status' => 1]);
+
+    // Add the nodes to the page variables.
+    $variables['mp_nodes'] = $mp_nodes;
 }
 
 ?>
