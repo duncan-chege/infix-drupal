@@ -1,35 +1,61 @@
-.leaders-display img:not(.left-motion, .right-motion){
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    object-fit: cover;
+.leaders-display img:not(.left-motion, .right-motion) {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .leaders-display {
-    margin: 3em 0;
+  margin: 3em 0;
 }
 
 .leaders-display>div:first-of-type {
-    background: #6dbe7a;
-    margin-bottom: 2em;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+  background: #6dbe7a;
+  margin-bottom: 2em;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-.leaders-display h3{
-    font-weight: 600;
-    margin: 0;
-    text-align: center;
+.leaders-display h3 {
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
 }
 
-.left-motion{
-    width: 16px;
-    margin-right: 3em;
+.leaders-display button {
+  font-size: 41px;
+  background: none;
+  border: none;
+  line-height: 0;
 }
 
-.right-motion{
-    width: 16px;
-    margin-left: 3em;
+.leaders-display label {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.input-wrapper,
+ul {
+  display: none;
+}
+
+.input-wrapper.active {
+  display: flex;
+}
+
+ul.active {
+  display: block;
 }

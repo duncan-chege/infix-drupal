@@ -20,67 +20,86 @@
           </div>
 
           <div class="leaders-display">
-            <div class="splide">
-              <div class="splide__track">
-                <ul class="splide__list">
-                  {% if mp_nodes %}
-                  <div class="row">
-                      {% for node in mp_nodes %}
-                      {% if node.field_parliament_number.value == '13th parliament' %}
-                      <li class="splide__slide">
-                        <div class="col-md-2 text-center">
-                          {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
-
-                          {% if image_url %}
-                          <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
-                          {% else %}
-                          <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
-                          {% endif %}
-                          <p class="mt-2 mb-0">{{ node.title.value }}</p>
-                          <p class="mb-2">{{ node.field_constituency.value }}
-                        </div>
-                      </li>
-                      {% endif %}
-                      {% if node.field_parliament_number.value == '12th parliament' %}
-                      <li class="splide__slide">
-                        <div class="col-md-2 text-center">
-                          {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
-
-                          {% if image_url %}
-                          <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
-                          {% else %}
-                          <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
-                          {% endif %}
-                          <p class="mt-2 mb-0">{{ node.title.value }}</p>
-                          <p class="mb-2">{{ node.field_constituency.value }}
-                        </div>
-                      </li>
-                      {% endif %}
-                      {% endfor %}
+            <div class="slide">
+              <button class="me-5"data-dir="previous" onclick="selectParliament(event)">
+                <</button> <fieldset id="parliament-fieldset">
+                  <legend class="sr-only">Select a Parliament: </legend>
+                  <div class="input-wrapper active">
+                    <input class="sr-only" type="radio" id="parliament-12th" name="parliament" value="12th">
+                    <label for="parliament-12th">12th Parliament</label>
                   </div>
-                  {% endif %}
-                </ul>
-              </div>
+                  <div class="input-wrapper">
+                    <input class="sr-only" type="radio" id="parliament-13th" name="parliament" value="13th">
+                    <label for="parliament-13th">13th Parliament</label>
+                  </div>
+                  </fieldset>
+                  <button class="ms-5" data-dir="next" onclick="selectParliament(event)">></button>
             </div>
-          </div>
 
+            {% if mp_nodes %}
+            <div class="row" id="mp-container">
+              {% for node in mp_nodes %}
+              <div class="col-md-2 text-center" data-parliament="{{ node.field_parliament_number.value }}">
+                {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
+
+                {% if image_url %}
+                <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
+                {% else %}
+                <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
+                {% endif %}
+                <p class="mt-2 mb-0">{{ node.title.value }}</p>
+                <p class="mb-2">{{ node.field_constituency.value }}</p>
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
         </div>
       </div>
 
     </div>
+  </div>
 
-    {{ page.footer }}
+  {{ page.footer }}
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let mps_number = new Splide('.leaders-display>.splide', {
-          type: 'loop',
-          perPage: 1,
-          perMove: 1,
-        });
+  <script>
+    let activeParliament = '12th'; // Default value
 
-        mps_number.mount();
+    filterMembersByParliament(activeParliament);
+    
+    function selectParliament(e) {
+      e.preventDefault();
+      const dir = e.target.dataset.dir;
+      const activeEl = document.getElementById(`parliament-${activeParliament}`);
+      const parentEl = activeEl.parentElement;
+      parentEl.classList.remove('active');
+
+      let newActiveEl;
+      if (dir === 'next') {
+        newActiveEl = parentEl.nextElementSibling ? parentEl.nextElementSibling : parentEl.parentElement.children[1];
+      } else {
+        newActiveEl = parentEl.previousElementSibling.tagName.toLowerCase() !== 'legend' ? parentEl
+          .previousElementSibling : parentEl.parentElement.lastElementChild;
+      }
+
+      newActiveEl.classList.add('active');
+      activeParliament = newActiveEl.firstElementChild.value;
+
+      // Filter and display the nodes based on the selected parliament
+      filterMembersByParliament(activeParliament);
+    }
+
+    function filterMembersByParliament(parliament) {
+      const mps = document.querySelectorAll('#mp-container .col-md-2');
+      mps.forEach(mp => {
+        if (mp.dataset.parliament === parliament) {
+          mp.style.display = 'block'; // Show if the member belongs to the selected parliament
+        } else {
+          mp.style.display = 'none'; // Hide otherwise
+        }
       });
+    }
 
-    </script>
+  </script>
+
 </body>
