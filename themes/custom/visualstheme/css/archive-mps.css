@@ -115,6 +115,10 @@ input#edit-submit-members-of-parliament {
     color: var(--green);
 }
 
+.pagination .is-active .page-link {
+    color: #fff !important;
+}
+
 .pagination .page-link:hover{
     color: var(--green);
 }
