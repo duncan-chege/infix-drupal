@@ -21,7 +21,7 @@
 
           <div class="leaders-display">
             <div class="slide">
-              <button class="me-5"data-dir="previous" onclick="selectParliament(event)">
+              <button class="me-5" data-dir="previous" onclick="selectParliament(event)">
                 <</button> <fieldset id="parliament-fieldset">
                   <legend class="sr-only">Select a Parliament: </legend>
                   <div class="input-wrapper active">
@@ -37,20 +37,22 @@
             </div>
 
             {% if mp_nodes %}
-            <div class="row" id="mp-container">
-              {% for node in mp_nodes %}
-              <div class="col-md-2 text-center" data-parliament="{{ node.field_parliament_number.value }}">
-                {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
+            <div data-simplebar id="mp-container">
+              <div class="row">
+                {% for node in mp_nodes %}
+                <div class="col-md-2 col-6 text-center" data-parliament="{{ node.field_parliament_number.value }}">
+                  {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
 
-                {% if image_url %}
-                <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
-                {% else %}
-                <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
-                {% endif %}
-                <p class="mt-2 mb-0">{{ node.title.value }}</p>
-                <p class="mb-2">{{ node.field_constituency.value }}</p>
+                  {% if image_url %}
+                  <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
+                  {% else %}
+                  <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
+                  {% endif %}
+                  <p class="mt-2 mb-0 fw-bold">{{ node.title.value }}</p>
+                  <p class="mb-2">MP: {{ node.field_constituency.value }}</p>
+                </div>
+                {% endfor %}
               </div>
-              {% endfor %}
             </div>
             {% endif %}
           </div>
@@ -66,7 +68,7 @@
     let activeParliament = '12th'; // Default value
 
     filterMembersByParliament(activeParliament);
-    
+
     function selectParliament(e) {
       e.preventDefault();
       const dir = e.target.dataset.dir;
@@ -99,6 +101,11 @@
         }
       });
     }
+
+    var myElement = document.getElementById('mp-container');
+    new SimpleBar(myElement, {
+      autoHide: false
+    });
 
   </script>
 

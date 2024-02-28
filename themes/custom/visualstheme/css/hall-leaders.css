@@ -59,3 +59,18 @@ ul {
 ul.active {
   display: block;
 }
+
+#mp-container{
+  max-height: 500px;
+  overflow-x: hidden;
+}
+
+#mp-container p:first-of-type{
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0.5em 0 0 0;
+}
+
+.simplebar-scrollbar::before {
+  background-color: var(--green);
+}
