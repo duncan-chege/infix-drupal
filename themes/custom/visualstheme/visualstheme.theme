@@ -36,6 +36,9 @@ function visualstheme_preprocess_page__front(&$variables) {
   // Add the nodes to the page variables.
   $variables['second_committee_nodes'] = $sc_nodes;
 
+  if ($variables['is_front'] == TRUE) {
+    $variables['#attached']['library'][] = 'visualstheme/homepage-js';
+  }
 }
 
 function visualstheme_preprocess_page(&$variables){

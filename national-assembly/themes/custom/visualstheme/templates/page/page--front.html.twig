@@ -190,6 +190,18 @@
     src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let splide_hero = new Splide('.splide.hero-images', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: true,
+        speed: 300,
+      });
+      splide_hero.mount();
+    });
+  </script>
+
 </body>
 
 </html>

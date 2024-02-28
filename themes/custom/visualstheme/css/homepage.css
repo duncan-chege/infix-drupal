@@ -252,8 +252,38 @@ ul.splide__pagination {
   font-weight: 600;
 }
 
-.level-a {
+.level-a, .level-b {
   background-color: var(--green);
+  transition: all 0.2s linear 0s;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.level-a::before, .level-b::before{
+  content: ">";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 35px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0 50% 50% 0;
+  transform: scale(0, 1);
+  transform-origin: left center;
+  transition: all 0.2s linear 0s;
+}
+
+.level-a:hover, .level-b:hover{
+  text-indent: 30px;
+}
+
+.level-a:hover::before, .level-b:hover::before{
+  transform: scale(1.6,1.6);
+  text-indent: 0;
 }
 
 .level-b {
