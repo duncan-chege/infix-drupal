@@ -282,7 +282,7 @@ ul.splide__pagination {
 }
 
 .level-a:hover::before, .level-b:hover::before{
-  transform: scale(1.6,1.6);
+  transform: scale(1.65,1.65);
   text-indent: 0;
 }
 
