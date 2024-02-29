@@ -25,12 +25,12 @@
                 <</button> <fieldset id="parliament-fieldset">
                   <legend class="sr-only">Select a Parliament: </legend>
                   <div class="input-wrapper active">
-                    <input class="sr-only" type="radio" id="parliament-12th" name="parliament" value="12th">
-                    <label for="parliament-12th">12th Parliament</label>
+                    <input class="sr-only" type="radio" id="parliament-13th" name="parliament" value="13th">
+                    <label for="parliament-12th">13th Parliament</label>
                   </div>
                   <div class="input-wrapper">
-                    <input class="sr-only" type="radio" id="parliament-13th" name="parliament" value="13th">
-                    <label for="parliament-13th">13th Parliament</label>
+                    <input class="sr-only" type="radio" id="parliament-12th" name="parliament" value="12th">
+                    <label for="parliament-13th">12th Parliament</label>
                   </div>
                   </fieldset>
                   <button class="ms-5" data-dir="next" onclick="selectParliament(event)">></button>
@@ -40,7 +40,7 @@
             <div data-simplebar id="mp-container">
               <div class="row">
                 {% for node in mp_nodes %}
-                <div class="col-md-2 col-6 text-center" data-parliament="{{ node.field_parliament_number.value }}">
+                <div class="col-md-2 col-6 text-center" data-parliament="{{ node.field_parliament_session.value }}">
                   {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
 
                   {% if image_url %}
@@ -69,7 +69,7 @@
   {{ page.footer }}
 
   <script>
-    let activeParliament = '12th'; // Default value
+    let activeParliament = '13th'; // Default value
 
     filterMembersByParliament(activeParliament);
 
