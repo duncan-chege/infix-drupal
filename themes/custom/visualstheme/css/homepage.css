@@ -1,5 +1,5 @@
 .splide.hero-images {
-  height: 70vh;
+  height: calc(100vh - 136px);
 }
 
 .splide__track {
