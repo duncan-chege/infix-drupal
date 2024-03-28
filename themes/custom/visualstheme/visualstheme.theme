@@ -36,6 +36,45 @@ function visualstheme_preprocess_page__front(&$variables) {
   // Add the nodes to the page variables.
   $variables['second_committee_nodes'] = $sc_nodes;
 
+
+   // Load nodes of type 'notices'.
+  $notices_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'notices', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['notices_nodes'] = $notices_nodes;
+
+
+   // Load nodes of type 'news & updates'.
+  $newsup_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'news_updates', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['newsup_nodes'] = $newsup_nodes;
+
+
+  // Load nodes of type 'national assembly schedule'.
+  $nat_schedule = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'national_assembly_schedule', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['nat_schedule'] = $nat_schedule;
+
+  // Load nodes of type 'national assembly schedule'.
+  $nat_schedule = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'national_assembly_schedule', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['nat_schedule'] = $nat_schedule;
+
+  // Load nodes of type 'senate schedule'.
+  $sen_schedule = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'senate_schedule', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['sen_schedule'] = $sen_schedule;
+
+
   if ($variables['is_front'] == TRUE) {
     $variables['#attached']['library'][] = 'visualstheme/homepage-js';
   }

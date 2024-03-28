@@ -1,11 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let splide_hero = new Splide('.splide.hero-images', {
+  let splide_news = new Splide('.splide.image-updates', {
+    arrows: false,
     type: 'loop',
     perPage: 1,
     autoplay: true,
-    speed: 300,
+    speed: 250,
   });
-  splide_hero.mount();
+  splide_news.mount();
+
+  let nat_schedule = new Splide('.splide.nat-schedule', {
+    arrows: true,
+    type: 'fade',
+    perPage: 1,
+    pagination: false,
+  });
+  nat_schedule.mount();
+
+  let senate_schedule = new Splide('.splide.senate-schedule', {
+    arrows: true,
+    type: 'fade',
+    perPage: 1,
+    pagination: false,
+  });
+  senate_schedule.mount();
 
   let splide_committee = new Splide('.splide.committee-articles', {
     type   : 'loop',
@@ -84,30 +101,11 @@ svgElement.addEventListener("mouseleave", function () {
 });
 
 
-let na_index = 0;
-let senate_index = 0;
 let notice_index = 0;
 
-const na_items = document.querySelectorAll('.na-slider li');
-const senate_items = document.querySelectorAll('.senate-slider li');
 const notice_items = document.querySelectorAll('.notice-slider li');
 
-setInterval(() => {
-  // Hide the current list item
-  na_items[na_index].classList.remove('ease-in');
-
-  // Move to the next list item, or loop back to the start
-  na_index = (na_index + 1) % na_items.length;
-
-  // Show the next list item
-  na_items[na_index].classList.add('ease-in');
-
-  senate_items[senate_index].classList.remove('ease-in');
-
-  senate_index = (senate_index + 1) % senate_items.length;
-
-  senate_items[senate_index].classList.add('ease-in');
-  
+setInterval(() => {  
   notice_items[notice_index].classList.remove('ease-in');
 
   notice_index = (notice_index + 1) % notice_items.length;

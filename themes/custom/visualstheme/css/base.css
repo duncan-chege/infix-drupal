@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Work+Sans:wght@400;500;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --blue: #17195c;
+  --blue: #17195C;
   --green: #006810;
   --lightblue: #4272e7;
   --lightgreen: #30c856;
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Onest", sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
 
@@ -22,16 +22,24 @@ img {
 }
 
 input.form-control.me-2 {
-  border-color: var(--green);
   border-radius: 25px;
+}
+
+.navigation-container {
+  background: url(../images/parliament-bg.png) var(--green);
+  background-position-y: 56%;
+  background-size: cover;
+  padding: 1em;
+  background-blend-mode: multiply;
 }
 
 .navbar-brand img {
   height: 80px;
 }
 
-.navbar-nav {
-  background-color: var(--green);
+.first-nav form {
+  align-self: center;
+  flex-grow: .2;
 }
 
 .navbar .nav-link {

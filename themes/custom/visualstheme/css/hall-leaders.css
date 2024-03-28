@@ -48,10 +48,10 @@
   border: 0;
 }
 
-.input-wrapper,
+/* .input-wrapper,
 ul {
   display: none;
-}
+} */
 
 .input-wrapper.active {
   display: flex;
