@@ -61,7 +61,7 @@
                 {% set articleCount = 0 %}
 
                 {# Loop through each article #}
-                {% for node in nat_schedule %}
+                {% for node in nat_schedule|sort((a, b) => a.field_start_time.value <=> b.field_start_time.value) %}
                 {# Get the start time of the article #}
                 {% set startTime = node.field_start_time.value %}
 
