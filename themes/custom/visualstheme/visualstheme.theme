@@ -21,20 +21,20 @@ function visualstheme_preprocess_page__front(&$variables) {
   $variables['senate_nodes'] = $senate_nodes;
 
 
-   // Load nodes of type 'first committee'.
-  $fc_nodes = \Drupal::entityTypeManager()->getStorage('node')
-    ->loadByProperties(['type' => 'committee_work', 'status' => 1]);
+   // Load nodes of type 'national assembly committee work'.
+  $nc_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'nat_committee_work', 'status' => 1]);
 
   // Add the nodes to the page variables.
-  $variables['committee_nodes'] = $fc_nodes;
+  $variables['nc_nodes'] = $nc_nodes;
 
 
    // Load nodes of type 'second committee'.
   $sc_nodes = \Drupal::entityTypeManager()->getStorage('node')
-    ->loadByProperties(['type' => 'second_committee_work', 'status' => 1]);
+    ->loadByProperties(['type' => 'sen_committee_work', 'status' => 1]);
 
   // Add the nodes to the page variables.
-  $variables['second_committee_nodes'] = $sc_nodes;
+  $variables['sc_nodes'] = $sc_nodes;
 
 
    // Load nodes of type 'notices'.
@@ -74,6 +74,13 @@ function visualstheme_preprocess_page__front(&$variables) {
   // Add the nodes to the page variables.
   $variables['sen_schedule'] = $sen_schedule;
 
+
+ // Load nodes of type 'bills & acts'.
+  $bill_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'bills_acts', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['bill_nodes'] = $bill_nodes;
 
   if ($variables['is_front'] == TRUE) {
     $variables['#attached']['library'][] = 'visualstheme/homepage-js';

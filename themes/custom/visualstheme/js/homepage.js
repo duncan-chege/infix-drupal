@@ -4,9 +4,25 @@ document.addEventListener("DOMContentLoaded", function () {
     type: 'loop',
     perPage: 1,
     autoplay: true,
-    speed: 250,
   });
   splide_news.mount();
+
+  let splide_second_news = new Splide('.news-updates .splide', {
+    arrows: false,
+    type: 'loop',
+    perPage: 3,
+    pagination: true,
+    autoplay: true,
+    breakpoints: {
+      1024: {
+        perPage: 2,
+      },
+      640: {
+        perPage: 1,
+      },
+    }
+  });
+  splide_second_news.mount();
 
   let nat_schedule = new Splide('.splide.nat-schedule', {
     arrows: true,
@@ -24,15 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   senate_schedule.mount();
 
-  let splide_committee = new Splide('.splide.committee-articles', {
-    type   : 'loop',
-    pagination: false,
-    drag   : 'free',
-    focus  : 'center',
+  let nat_committee = new Splide('.nat-committee-work .splide', {
+    arrows: false,
+    type: 'loop',
     perPage: 3,
-    autoScroll: {
-      speed: 1,
-    },
+    pagination: true,
+    autoplay: true,
+    speed: 250,
     breakpoints: {
       1024: {
         perPage: 2,
@@ -42,17 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     }
   });
-  splide_committee.mount(window.splide.Extensions);
+  nat_committee.mount();
 
-  let second_splide_committee = new Splide('.splide.second-committee-articles', {
-    type   : 'loop',
-    pagination: false,
-    drag   : 'free',
-    focus  : 'center',
+  let sen_committee = new Splide('.sen-committee-work .splide', {
+    arrows: false,
+    type: 'loop',
     perPage: 3,
-    autoScroll: {
-      speed: 1,
-    },
+    pagination: true,
+    autoplay: true,
     breakpoints: {
       1024: {
         perPage: 2,
@@ -62,9 +73,28 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     }
   });
-  second_splide_committee.mount(window.splide.Extensions);
+  sen_committee.mount();
 
 });
+
+function openRelease(event, releaseName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  const element = document.getElementById(releaseName);
+  element.style.display = "flex";
+  element.style.flexDirection = "column";
+  
+  event.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
 
 function handleMouseMove(event) {
   var countryTitle = event.target.getAttribute("title");
@@ -105,11 +135,11 @@ let notice_index = 0;
 
 const notice_items = document.querySelectorAll('.notice-slider li');
 
-setInterval(() => {  
+setInterval(() => {
   notice_items[notice_index].classList.remove('ease-in');
 
   notice_index = (notice_index + 1) % notice_items.length;
 
   notice_items[notice_index].classList.add('ease-in');
-  
+
 }, 3000);
