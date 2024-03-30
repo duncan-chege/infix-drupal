@@ -226,11 +226,11 @@
         <div id="Bills" class="tabcontent">
           {% if bill_nodes %}
           {% for node in bill_nodes %}
-          <div class="d-flex justify-content-between text-center">
-            <p> {{ node.field_date_passed.value|date("j F Y") }} </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 3fr 1fr 0.8fr; gap: 15px 10px; overflow-x:auto;">
+            <p style="font-size: 14px;"> {{ node.field_date_passed.value|date("j F Y") }} </p>
             <p class="fw-semibold"> {{ node.field_bill_num.value }} </p>
             <p style="width: 450px;"> {{ node.title.value }} </p>
-            <p> {{ node.field_house.value }} </p>
+            <p style="font-size: 14px;"> {{ node.field_house.value }} </p>
             <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">View</a>
           </div>
           {% endfor %}

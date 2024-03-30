@@ -88,8 +88,7 @@ function openRelease(event, releaseName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   const element = document.getElementById(releaseName);
-  element.style.display = "flex";
-  element.style.flexDirection = "column";
+  element.style.display = "block";
   
   event.currentTarget.className += " active";
 }
