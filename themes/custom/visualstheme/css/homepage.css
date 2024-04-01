@@ -1,4 +1,4 @@
-.first-section, .news-updates, .nat-committee-work, .sen-committee-work {
+.first-section, .news-updates, .releases, .nat-committee-work, .sen-committee-work, .counties {
   margin: 4em 0;
 }
 
@@ -314,23 +314,40 @@
   object-fit: cover;
 }
 
+.counties a {
+  padding: 7px 10px;
+  color: var(--green);
+  background: #ebfff0;
+  display: block;
+  margin: 5px;
+  font-size: 14px;
+}
+
 .youtube-links{
   margin: 5em 0;
 }
 
+.youtube-links hr{
+  border: 1px solid;
+  opacity: 1;
+}
+
 .video-title {
-  font-size: 25px;
-  text-align: center;
   font-weight: 600;
-  margin-bottom: 1em;
+  position: absolute;
+  background: #fff;
+  padding: 0px 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .youtube-video {
+  border-radius: 10px;
   position: relative;
   padding-bottom: 56.25%;
-  /* 16:9 aspect ratio */
   padding-top: 30px;
-  /* To adjust for any additional content */
   height: 0;
   overflow: hidden;
 }
@@ -344,12 +361,12 @@
 }
 
 .kenyan-map svg {
-  stroke: #fff;
-  stroke-width: 1;
+  stroke: var(--green);
+  stroke-width: 1.5px;
 }
 
 .kenyan-map path {
-  fill: var(--green);
+  fill: #fff;
 }
 
 .tooltiptext {

@@ -192,7 +192,7 @@
 
     <div class="news-updates">
       <div class="row">
-        <h3 class="fw-bold mb-4"> News & Updates </h3>
+        <h4 class="fw-bold mb-4"> News & Updates </h4>
         {% if newsup_nodes %}
         <div class="splide">
           <div class="splide__track">
@@ -212,7 +212,7 @@
     </div>
 
     <div class="releases">
-      <h3 class="fw-bold mb-4"> Releases </h3>
+      <h4 class="fw-bold mb-4"> Releases </h4>
 
       <div class="releases-bloc">
         <div class="tab">
@@ -253,7 +253,7 @@
 
     <div class="nat-committee-work">
       <div class="row">
-        <h3 class="fw-bold mb-4"> National Assembly Committee Work </h3>
+        <h4 class="fw-bold mb-4"> National Assembly Committee Work </h4>
         {% if nc_nodes %}
         <div class="splide">
           <div class="splide__track">
@@ -274,7 +274,7 @@
 
     <div class="sen-committee-work">
       <div class="row">
-        <h3 class="fw-bold mb-4"> Senate Committee Work </h3>
+        <h4 class="fw-bold mb-4"> Senate Committee Work </h4>
         {% if nc_nodes %}
         <div class="splide">
           <div class="splide__track">
@@ -295,14 +295,16 @@
 
     <div class="counties">
       <div class="row">
-        <div class="col-md-7 kenyan-map d-flex justify-content-center align-items-center">
+        <div class="col-md-12">
+          <h4 class="fw-bold my-5">Discover parliamentray representation across our country</h4>
+        </div>
+        <div class="col-md-5 kenyan-map d-flex justify-content-center align-items-center">
           <span class="tooltiptext" id="tooltip">Tooltip text</span>
           <div class="map-container">
             <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/"
               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
               xmlns="http://www.w3.org/2000/svg" mapsvg:geoViewBox="33.909821 5.033421 41.906896 -4.679658"
-              width="457.63434" height="580.54065" onmousemove="handleMouseMove(event)"
-              style=" stroke: #fff; stroke-width: 1;">
+              width="457.63434" height="580.54065" onmousemove="handleMouseMove(event)">
 
               <a href="#" title="Mombasa" target="_self" id="mombasa">
                 <path
@@ -541,30 +543,46 @@
               </a>
             </svg>
           </div>
-
         </div>
-      </div>
-    </div>
-
-    <div class="youtube-links">
-      <div class="row">
-        <div class="col-md-6">
-          <h3 class="video-title">National Assembly</h3>
-          <div class="youtube-video">
-            <iframe width="480" height="300" src="https://www.youtube.com/embed/DjXlidHoPyU?si=GGbonaXObz-4k_ip"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
+        <div class="col-md-7">
+          <div class="row">
+            {% if cnt_nodes %}
+            {% for node in cnt_nodes %}
+            <div class="col-sm-3">
+              <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }} <i class="bi bi-arrow-right-short"></i></a>
+            </div>
+            {% endfor %}
+            {% endif %}
           </div>
         </div>
+      </div>
 
-        <div class="col-md-6">
-          <h3 class="video-title">Senate</h3>
-          <div class="youtube-video">
-            <iframe width="480" height="300" src="https://www.youtube.com/embed/vZgnGwyOO2s?si=rM7U8r94XJ_a1f4z"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
+      <div class="youtube-links">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="position-relative mb-5">
+              <h4 class="video-title">National Assembly Live</h4>
+              <hr>
+            </div>
+            <div class="youtube-video">
+              <iframe width="480" height="300" src="https://www.youtube.com/embed/DjXlidHoPyU?si=GGbonaXObz-4k_ip"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="position-relative mb-5">
+              <h4 class="video-title">Senate Live</h4>
+              <hr>
+            </div>
+            <div class="youtube-video">
+              <iframe width="480" height="300" src="https://www.youtube.com/embed/vZgnGwyOO2s?si=rM7U8r94XJ_a1f4z"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>

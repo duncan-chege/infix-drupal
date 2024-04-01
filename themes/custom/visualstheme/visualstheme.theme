@@ -82,6 +82,13 @@ function visualstheme_preprocess_page__front(&$variables) {
   // Add the nodes to the page variables.
   $variables['bill_nodes'] = $bill_nodes;
 
+   // Load nodes of type 'counties'.
+  $cnt_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'counties', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['cnt_nodes'] = $cnt_nodes;
+
   if ($variables['is_front'] == TRUE) {
     $variables['#attached']['library'][] = 'visualstheme/homepage-js';
   }

@@ -51,17 +51,27 @@ input.form-control.me-2 {
 }
 
 .footer {
-  padding: 3em 3em 1em;
+  padding: 3em 0;
   background: var(--green);
   margin-top: 4em;
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer-bloc{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 4em;
 }
 
 .footer img {
-  width: 120px;
+  width: 250px;
+  margin-bottom: 10px;
 }
 
 .footer h5 {
   color: #fff;
+  padding: 1em 0;
 }
 
 .footer a {
@@ -84,4 +94,8 @@ input.form-control.me-2 {
 
 .footer .row:first-of-type {
   border-bottom: 1px solid #fff;
+}
+
+.footer iframe{
+  border-radius: 10px;
 }
