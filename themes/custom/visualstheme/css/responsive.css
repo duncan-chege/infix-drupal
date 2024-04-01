@@ -1,11 +1,31 @@
 /* Device: Tablets & Mobile Phones */
 @media (max-width: 1024px) {
+  
+  .footer {
+    margin-top: 0 !important;
+  }
+
+  .releases-bloc {
+    padding: .5em;
+  }
+
+  .nat-schedule .splide__arrow--prev,
+  .senate-schedule .splide__arrow--prev {
+    left: 0;
+  }
+
+  .nat-schedule .splide__arrow--next,
+  .senate-schedule .splide__arrow--next {
+    right: 0;
+  }
+
   .splide.hero-images {
     height: 50vh;
   }
 
   .youtube-video {
     padding-bottom: 75%;
+    margin-bottom: 2em;
   }
 
   .news-block {
@@ -36,10 +56,23 @@
   .mp-card i {
     font-size: 1.5em;
   }
+
+  .footer-bloc {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  }
 }
 
 /* Device = Tablets, Ipads (portrait) */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .notices-block {
+    display: block;
+    padding: 15px;
+  }
+
+  .notice-slider {
+    padding: 0;
+  }
+
   #views-exposed-form-members-of-parliament-page-1 .form-item {
     width: 200px;
   }
@@ -51,6 +84,33 @@
 
 /* Device = Mobile Phones (portrait) */
 @media (min-width: 320px) and (max-width: 480px) {
+  
+  .navbar-brand img {
+    height: 80px;
+    width: 250px;
+  }
+
+  .video-title {
+    font-size: 20px;
+  }
+
+  .update-bloc img {
+    height: 400px;
+}
+
+.releases-bloc {
+  padding: .5em;
+}
+
+  .first-section,
+  .news-updates,
+  .releases,
+  .nat-committee-work,
+  .sen-committee-work,
+  .counties {
+    margin: 2em 0;
+  }
+
   .notices-block img {
     width: 50px;
   }
@@ -91,17 +151,20 @@
     margin-top: 0;
   }
 
-  .level-a, .level-b {
+  .level-a,
+  .level-b {
     margin: 0.5em;
     padding: 17px 10px;
     font-size: 18px;
   }
 
-  .splide.committee-articles .splide__arrow--prev, .splide.second-committee-articles .splide__arrow--prev {
+  .splide.committee-articles .splide__arrow--prev,
+  .splide.second-committee-articles .splide__arrow--prev {
     left: 0;
   }
-  
-  .splide.committee-articles .splide__arrow--next, .splide.second-committee-articles  .splide__arrow--next {
+
+  .splide.committee-articles .splide__arrow--next,
+  .splide.second-committee-articles .splide__arrow--next {
     right: 0;
   }
 }

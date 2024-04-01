@@ -35,13 +35,16 @@
               <ul class="splide__list">
                 {% for node in newsup_nodes %}
                 <li class="splide__slide">
-                  <div class="update-bloc">
-                    <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
-                    <div class="date-title">
-                      <p>{{ node.getCreatedTime|date('U')|format_date('custom', 'l, j F, Y') }}</p>
-                      <h6>{{ node.title.value }}</h6>
+                  <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+                    <div class="update-bloc">
+                      <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}"
+                        alt="{{ node.title.value }}" />
+                      <div class="date-title">
+                        <p>{{ node.getCreatedTime|date('U')|format_date('custom', 'l, j F, Y') }}</p>
+                        <h6>{{ node.title.value }}</h6>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </li>
                 {% endfor %}
               </ul>
@@ -199,9 +202,10 @@
             <ul class="splide__list">
               {% for node in newsup_nodes %}
               <li class="splide__slide px-3">
-                <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
-                    src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" /></a>
-                <h5> {{ node.title.value }} </h5>
+                <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
+                <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+                  <h5> {{ node.title.value }} </h5>
+                </a>
               </li>
               {% endfor %}
             </ul>
@@ -298,7 +302,7 @@
         <div class="col-md-12">
           <h4 class="fw-bold my-5">Discover parliamentray representation across our country</h4>
         </div>
-        <div class="col-md-5 kenyan-map d-flex justify-content-center align-items-center">
+        <div class="col-12 col-lg-5 kenyan-map d-flex justify-content-center align-items-center">
           <span class="tooltiptext" id="tooltip">Tooltip text</span>
           <div class="map-container">
             <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -544,12 +548,13 @@
             </svg>
           </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-12 col-lg-7 mt-4">
           <div class="row">
             {% if cnt_nodes %}
             {% for node in cnt_nodes %}
-            <div class="col-sm-3">
-              <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }} <i class="bi bi-arrow-right-short"></i></a>
+            <div class="col-6 col-sm-3">
+              <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }} <i
+                  class="bi bi-arrow-right-short"></i></a>
             </div>
             {% endfor %}
             {% endif %}
