@@ -1,4 +1,9 @@
-.first-section, .news-updates, .releases, .nat-committee-work, .sen-committee-work, .counties {
+.first-section,
+.news-updates,
+.releases,
+.nat-committee-work,
+.sen-committee-work,
+.counties {
   margin: 4em 0;
 }
 
@@ -28,11 +33,11 @@
   display: flex;
 }
 
-.notice-slider li{
+.notice-slider li {
   display: none;
 }
 
-.notice-slider li.ease-in{
+.notice-slider li.ease-in {
   display: block;
   transition: ease-in;
 }
@@ -49,6 +54,11 @@
   position: absolute;
   bottom: 0;
   left: 0px;
+}
+
+.update-bloc img:hover, .news-updates img:hover, .nat-committee-work img:hover, .sen-committee-work img:hover {
+  filter: grayscale(1);
+  z-index: 1;
 }
 
 .update-bloc img {
@@ -74,7 +84,7 @@
 
 .image-updates .splide__pagination {
   bottom: 1.5em;
-} 
+}
 
 .image-updates .splide__pagination__page {
   background: #fff;
@@ -88,7 +98,8 @@
   border-radius: 10px;
 }
 
-.nat-schedule-bloc, .senate-schedule-bloc {
+.nat-schedule-bloc,
+.senate-schedule-bloc {
   background: #eaffed;
   padding: .5em 1em;
   border-radius: 10px;
@@ -98,7 +109,8 @@
   background: rgb(226 240 255);
 }
 
-.nat-schedule-bloc h5, .senate-schedule-bloc h5{
+.nat-schedule-bloc h5,
+.senate-schedule-bloc h5 {
   font-size: 18px;
 }
 
@@ -111,11 +123,11 @@
   left: 4px;
 }
 
-.senate-schedule-bloc .time-topic li::before{
+.senate-schedule-bloc .time-topic li::before {
   border-left: 2px solid var(--blue);
 }
 
-.senate-schedule-bloc .time-topic li::after{
+.senate-schedule-bloc .time-topic li::after {
   border: 5px solid var(--blue);
 }
 
@@ -130,21 +142,23 @@
   width: 0;
 }
 
-.time-topic li:nth-child(2)::after, .time-topic li:nth-child(2)::before, .time-topic li:nth-child(2){
+.time-topic li:nth-child(2)::after,
+.time-topic li:nth-child(2)::before,
+.time-topic li:nth-child(2) {
   color: grey;
   border-color: grey;
 }
 
-.schedule-date{
+.schedule-date {
   font-weight: 600;
   margin-bottom: 2em;
 }
 
-.nat-schedule .splide__arrow{
+.nat-schedule .splide__arrow {
   background: var(--green);
 }
 
-.senate-schedule .splide__arrow{
+.senate-schedule .splide__arrow {
   background: var(--blue);
 }
 
@@ -152,43 +166,65 @@
   fill: #fff;
 }
 
-.nat-schedule .splide__arrow--prev, .senate-schedule .splide__arrow--prev {
+.nat-schedule .splide__arrow--prev,
+.senate-schedule .splide__arrow--prev {
   left: 8em;
   top: 10px;
 }
 
-.nat-schedule .splide__arrow--next, .senate-schedule .splide__arrow--next {
+.nat-schedule .splide__arrow--next,
+.senate-schedule .splide__arrow--next {
   right: 8em;
   top: 10px;
 }
 
-.nat-schedule li, .senate-schedule li{
+.nat-schedule li,
+.senate-schedule li {
   list-style: none;
   margin-left: 1rem;
   margin-bottom: .8rem;
 }
 
-.na-schedule-link, .senate-schedule-link {
+.na-schedule-link,
+.senate-schedule-link {
   display: flex;
   justify-content: end;
 }
 
-.na-schedule-link a, .senate-schedule-link a{
+.na-schedule-link a,
+.senate-schedule-link a {
   padding: 7px 12px;
   border: 1px solid var(--green);
   border-radius: 25px;
   color: var(--green);
   font-size: 14px;
+  transition: .3s;
 }
 
-.senate-schedule-link a{
+.na-schedule-link a:hover, .releases-bloc a:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.senate-schedule-link a:hover{
+  background: var(--blue);
+  color: #fff;
+}
+
+.senate-schedule-link a {
   border: 1px solid var(--blue);
   color: var(--blue);
 }
 
-.news-updates h5, .nat-committee-work h5, .sen-committee-work h5{
+.news-updates h5,
+.nat-committee-work h5,
+.sen-committee-work h5 {
   font-size: 1.1rem;
   padding: 14px 0;
+}
+
+.news-updates h5, .nat-committee-work h5, .sen-committee-work h5 {
+  color: var(--green);
 }
 
 .nav-pills .nav-link:not(.active) {
@@ -289,7 +325,7 @@
   padding: 2em 1em;
 }
 
-.tabcontent a{
+.tabcontent a {
   padding: 5px 30px;
   color: var(--green);
   border: 1px solid;
@@ -304,7 +340,6 @@
 }
 
 .nat-committee-work img,
-.two-committee-work img, 
 .news-updates img,
 .sen-committee-work img {
   height: 250px;
@@ -319,13 +354,19 @@
   display: block;
   margin: 5px;
   font-size: 14px;
+  transition: .3s;
 }
 
-.youtube-links{
+.counties a:hover {
+  background: var(--green);
+  color: #ebfff0;
+}
+
+.youtube-links {
   margin: 5em 0;
 }
 
-.youtube-links hr{
+.youtube-links hr {
   border: 1px solid;
   opacity: 1;
 }

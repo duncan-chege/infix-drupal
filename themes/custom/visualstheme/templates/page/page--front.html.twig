@@ -202,9 +202,9 @@
             <ul class="splide__list">
               {% for node in newsup_nodes %}
               <li class="splide__slide px-3">
-                <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
-                <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
-                  <h5> {{ node.title.value }} </h5>
+                <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
+                    src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" /></a>
+                <h5> {{ node.title.value }} </h5>
                 </a>
               </li>
               {% endfor %}
