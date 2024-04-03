@@ -400,12 +400,18 @@
 }
 
 .kenyan-map svg {
-  stroke: var(--green);
+  stroke: #fff;
   stroke-width: 1.5px;
 }
 
 .kenyan-map path {
-  fill: #fff;
+  fill: #d9d9d9;
+}
+
+.kenyan-map path:hover {
+  stroke: var(--green);
+  stroke-width: 2px;
+  fill: var(--green);
 }
 
 .tooltiptext {
