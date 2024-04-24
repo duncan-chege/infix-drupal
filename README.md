@@ -1,3 +1,7 @@
+## Reminder:
+Remove `Disallow: /` from **robots.txt** file to allow the website to be indexed by Google after work is done
+
+
 <img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
 
 Drupal is an open source content management platform supporting a variety of
