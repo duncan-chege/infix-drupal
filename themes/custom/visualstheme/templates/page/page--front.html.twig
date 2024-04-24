@@ -207,7 +207,7 @@
               <ul class="splide__list">
                 {% set articleCount = 0 %}
                 {% for node in newsup_nodes %}
-                {% if articleCount < 5 %} <li class="splide__slide px-3">
+                {% if articleCount < 6 %} <li class="splide__slide px-3">
                   <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
                       src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" /></a>
                   <h5> {{ node.title.value }} </h5>
