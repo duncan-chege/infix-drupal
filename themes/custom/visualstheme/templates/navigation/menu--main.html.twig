@@ -1,22 +1,20 @@
 <div class="navigation-container">
   <div class="first-nav container d-flex justify-content-between d-none d-lg-flex">
     <a class="navbar-brand align-self-center" href="{{ url('<front>') }}">
-      <img src="{{ base_path ~ directory }}/images/parliament-logo.svg" alt="" />
+      <img src="{{ file_url('/' ~ base_path ~ directory ~ '/images/parliament-logo.svg') }}" alt="" />
     </a>
-    {# <div class="d-flex search-social-links align-items-center"> #}
-      <form role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-      </form>
-      <div class="align-self-center">
-        <i class="bi bi-facebook px-3" style="font-size: 1.5rem; color: #fff;"></i>
-        <i class="bi bi-twitter-x px-1" style="font-size: 1.4rem; color: #fff;"></i>
-      </div>
-    {# </div> #}
+    <form role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+    </form>
+    <div class="align-self-center">
+      <i class="bi bi-facebook px-3" style="font-size: 1.5rem; color: #fff;"></i>
+      <i class="bi bi-twitter-x px-1" style="font-size: 1.4rem; color: #fff;"></i>
+    </div>
   </div>
 
   <nav class="second-nav navbar navbar-expand-lg pb-0">
     <a class="navbar-brand align-self-center d-lg-none" href="{{ url('<front>') }}">
-      <img src="{{ base_path ~ directory }}/images/parliament-logo.svg" alt="" />
+      <img src="{{ file_url('/' ~ base_path ~ directory ~ '/images/parliament-logo.svg') }}" alt="" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
