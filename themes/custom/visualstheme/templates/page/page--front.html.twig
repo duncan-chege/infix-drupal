@@ -206,12 +206,14 @@
             <div class="splide__track">
               <ul class="splide__list">
                 {% set articleCount = 0 %}
-                {% for node in newsup_nodes %}
-                {% if articleCount < 6 %} <li class="splide__slide px-3">
-                  <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
-                      src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" /></a>
-                  <h5> {{ node.title.value }} </h5>
+                {% set sortedNodes = newsup_nodes|sort((a, b) => b.created.value - a.created.value) %}
+                {% for node in sortedNodes %}
+                {% if articleCount < 6 %}
+                <li class="splide__slide px-3">
+                  <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+                    <img src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
                   </a>
+                  <h5>{{ node.title.value }}</h5>
                 </li>
                 {% set articleCount = articleCount + 1 %}
                 {% endif %}
@@ -237,7 +239,7 @@
 
           <div id="Bills" class="tabcontent">
             {% if bill_nodes %}
-              {{ drupal_view('bills_acts') }}
+            {{ drupal_view('bills_acts') }}
             {% endif %}
           </div>
           <div id="Memorandums" class="tabcontent">
