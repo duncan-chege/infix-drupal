@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f810fcfe9af03ec28c69dc5f24d58bb",
+    "content-hash": "324765dacc28f68308d366ffb81786a7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -974,6 +974,208 @@
             }
         },
         {
+            "name": "drupal/ckeditor",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor.git",
+                "reference": "1.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor-1.0.2.zip",
+                "reference": "1.0.2",
+                "shasum": "fec2ca9ad852a00c7b9584cb6040dc860364c481"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10"
+            },
+            "require-dev": {
+                "drupal/classy": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.2",
+                    "datestamp": "1695740655",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "dczepierga",
+                    "homepage": "https://www.drupal.org/user/911466"
+                },
+                {
+                    "name": "hass",
+                    "homepage": "https://www.drupal.org/user/85918"
+                },
+                {
+                    "name": "jcisio",
+                    "homepage": "https://www.drupal.org/user/210762"
+                },
+                {
+                    "name": "Jorrit",
+                    "homepage": "https://www.drupal.org/user/161217"
+                },
+                {
+                    "name": "lauriii",
+                    "homepage": "https://www.drupal.org/user/1078742"
+                },
+                {
+                    "name": "Magnus",
+                    "homepage": "https://www.drupal.org/user/73919"
+                },
+                {
+                    "name": "mkesicki",
+                    "homepage": "https://www.drupal.org/user/922884"
+                },
+                {
+                    "name": "nod_",
+                    "homepage": "https://www.drupal.org/user/598310"
+                },
+                {
+                    "name": "p.wiaderny",
+                    "homepage": "https://www.drupal.org/user/2956619"
+                },
+                {
+                    "name": "vokiel",
+                    "homepage": "https://www.drupal.org/user/2793801"
+                },
+                {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                },
+                {
+                    "name": "wwalc",
+                    "homepage": "https://www.drupal.org/user/184556"
+                },
+                {
+                    "name": "xjm",
+                    "homepage": "https://www.drupal.org/user/65776"
+                }
+            ],
+            "description": "WYSIWYG editing for rich text fields using CKEditor.",
+            "homepage": "https://www.drupal.org/project/ckeditor",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor"
+            }
+        },
+        {
+            "name": "drupal/ckeditor_bootstrap_buttons",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor_bootstrap_buttons.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_bootstrap_buttons-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "532d7c480fa176ae398a8470f244a67be05b3b13"
+            },
+            "require": {
+                "drupal/ckeditor": "*",
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1697677729",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "abu-zakham",
+                    "homepage": "https://www.drupal.org/u/abu-zakham",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://www.drupal.org/node/2687009/committers",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "shelane",
+                    "homepage": "https://www.drupal.org/user/2674989"
+                }
+            ],
+            "description": "Extension to the Drupal 8 CKEditor module.",
+            "homepage": "https://www.drupal.org/project/ckeditor_bootstrap_buttons",
+            "keywords": [
+                "Bootstrap",
+                "Buttons",
+                "CKEditor",
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/ckeditor_bootstrap_buttons",
+                "issues": "https://www.drupal.org/project/issues/ckeditor_bootstrap_buttons",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/ckeditor_bs_grid",
+            "version": "2.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor_bs_grid.git",
+                "reference": "2.0.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_bs_grid-2.0.11.zip",
+                "reference": "2.0.11",
+                "shasum": "877130a469c72e6f27d63300467a2119b0e9b56a"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.11",
+                    "datestamp": "1705359057",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "b_sharpe",
+                    "homepage": "https://www.drupal.org/user/2512258"
+                }
+            ],
+            "description": "Allows creating rows and columns within CKEditor using Bootstrap syntax.",
+            "homepage": "https://www.drupal.org/project/ckeditor_bs_grid",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor_bs_grid"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "10.1.6",
             "source": {
@@ -1487,6 +1689,118 @@
             }
         },
         {
+            "name": "drupal/ebt_core",
+            "version": "1.4.24",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ebt_core.git",
+                "reference": "1.4.24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ebt_core-1.4.24.zip",
+                "reference": "1.4.24",
+                "shasum": "69620b01426b74399d935277175e96f9cf6fb15b"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10 || ^11",
+                "drupal/field_group": "^3.0",
+                "drupal/media_library_form_element": "^2.0",
+                "levmyshkin/jquery-colorpicker": "^1.0",
+                "levmyshkin/jquery-mb-ytplayer": "^3.3.10",
+                "levmyshkin/parallaxjs": "^1.5",
+                "levmyshkin/vidbg": "^2.1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.4.24",
+                    "datestamp": "1715358896",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "levmyshkin",
+                    "homepage": "https://www.drupal.org/user/1079574"
+                },
+                {
+                    "name": "Narine_Tsaturyan",
+                    "homepage": "https://www.drupal.org/user/3723666"
+                }
+            ],
+            "description": "Extra Block Types (EBT): Core",
+            "homepage": "https://drupal.org/project/ebt_core",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/ebt_core",
+                "issues": "https://www.drupal.org/project/issues/ebt_core"
+            }
+        },
+        {
+            "name": "drupal/ebt_image_gallery",
+            "version": "1.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ebt_image_gallery.git",
+                "reference": "1.4.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ebt_image_gallery-1.4.5.zip",
+                "reference": "1.4.5",
+                "shasum": "2c49f633fa2531ac908f780861ab36d360ba6c08"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10 || ^11",
+                "drupal/ebt_core": "^1.4",
+                "drupal/glightbox": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.4.5",
+                    "datestamp": "1713943853",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "levmyshkin",
+                    "homepage": "https://www.drupal.org/user/1079574"
+                },
+                {
+                    "name": "Narine_Tsaturyan",
+                    "homepage": "https://www.drupal.org/user/3723666"
+                }
+            ],
+            "description": "Extra Block Types (EBT): Image Gallery",
+            "homepage": "http://drupal.org/project/ebt_image_gallery",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/ebt_image_gallery",
+                "issues": "https://www.drupal.org/project/issues/ebt_image_gallery"
+            }
+        },
+        {
             "name": "drupal/entity",
             "version": "1.4.0",
             "source": {
@@ -1556,6 +1870,71 @@
             }
         },
         {
+            "name": "drupal/field_group",
+            "version": "3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_group.git",
+                "reference": "8.x-3.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.4.zip",
+                "reference": "8.x-3.4",
+                "shasum": "80b937e1a11f8b29c69d853fc4bf798c057c6f94"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.4",
+                    "datestamp": "1667241979",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "Hydra",
+                    "homepage": "https://www.drupal.org/user/647364"
+                },
+                {
+                    "name": "jyve",
+                    "homepage": "https://www.drupal.org/user/591438"
+                },
+                {
+                    "name": "nils.destoop",
+                    "homepage": "https://www.drupal.org/user/361625"
+                },
+                {
+                    "name": "Stalski",
+                    "homepage": "https://www.drupal.org/user/322618"
+                },
+                {
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
+                }
+            ],
+            "description": "Provides the field_group module.",
+            "homepage": "https://www.drupal.org/project/field_group",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_group",
+                "issues": "https://www.drupal.org/project/issues/field_group"
+            }
+        },
+        {
             "name": "drupal/fullcalendar_view",
             "version": "5.1.13",
             "source": {
@@ -1606,6 +1985,52 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/fullcalendar_view",
                 "issues": "http://drupal.org/project/issues/fullcalendar_view"
+            }
+        },
+        {
+            "name": "drupal/glightbox",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/glightbox.git",
+                "reference": "1.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/glightbox-1.0.7.zip",
+                "reference": "1.0.7",
+                "shasum": "13dba397cf36c1f4d5be2bdc7c08809d0f65d43e"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10",
+                "levmyshkin/glightbox": "^3.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.7",
+                    "datestamp": "1713942568",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "levmyshkin",
+                    "homepage": "https://www.drupal.org/user/1079574"
+                }
+            ],
+            "description": "GLightbox is a pure javascript lightbox.",
+            "homepage": "https://www.drupal.org/project/glightbox",
+            "support": {
+                "source": "https://git.drupalcode.org/project/glightbox",
+                "issues": "https://www.drupal.org/project/issues/glightbox"
             }
         },
         {
@@ -1876,6 +2301,80 @@
             "support": {
                 "source": "https://www.drupal.org/project/jquery_ui_touch_punch",
                 "issues": "https://www.drupal.org/project/issues/jquery_ui_touch_punch"
+            }
+        },
+        {
+            "name": "drupal/media_library_form_element",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_library_form_element.git",
+                "reference": "2.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_library_form_element-2.0.6.zip",
+                "reference": "2.0.6",
+                "shasum": "91363cbea0d1895fbf0fbb9640d70fee47775111"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "require-dev": {
+                "drupal/webform": "6.2.x-dev@dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.6",
+                    "datestamp": "1674069446",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kim Kennof",
+                    "homepage": "https://www.drupal.org/u/nightlife2008",
+                    "email": "kim.kennof@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "AUSY, a randstad company",
+                    "homepage": "https://www.ausy.be",
+                    "email": "info@ausy.be",
+                    "role": "Sponsor"
+                },
+                {
+                    "name": "mark_fullmer",
+                    "homepage": "https://www.drupal.org/user/2612816"
+                },
+                {
+                    "name": "nightlife2008",
+                    "homepage": "https://www.drupal.org/user/333515"
+                },
+                {
+                    "name": "phenaproxima",
+                    "homepage": "https://www.drupal.org/user/205645"
+                }
+            ],
+            "description": "This module provides a Media Library Form API element to be used in all sorts of forms.",
+            "homepage": "https://www.drupal.org/project/media_library_form_element",
+            "keywords": [
+                "Drupal",
+                "Form API",
+                "Media",
+                "Media Library"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/media_library_form_element",
+                "issues": "https://www.drupal.org/project/issues/media_library_form_element"
             }
         },
         {
@@ -2656,6 +3155,163 @@
                 }
             ],
             "time": "2023-08-03T15:02:42+00:00"
+        },
+        {
+            "name": "levmyshkin/glightbox",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/levmyshkin/glightbox.git",
+                "reference": "ec02687a888436767b2800f949ab9f5e7db5c681"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/levmyshkin/glightbox/zipball/ec02687a888436767b2800f949ab9f5e7db5c681",
+                "reference": "ec02687a888436767b2800f949ab9f5e7db5c681",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "GLightbox is a pure javascript lightbox",
+            "support": {
+                "source": "https://github.com/levmyshkin/glightbox/tree/3.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/bdigital9816/5usd",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-11-22T11:31:00+00:00"
+        },
+        {
+            "name": "levmyshkin/jquery-colorpicker",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/levmyshkin/jquery_colorpicker.git",
+                "reference": "45f9ac11079b73885186ce73b531f0bba1812c7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/levmyshkin/jquery_colorpicker/zipball/45f9ac11079b73885186ce73b531f0bba1812c7f",
+                "reference": "45f9ac11079b73885186ce73b531f0bba1812c7f",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(MIT or GPL-1.0)"
+            ],
+            "description": "The jQuery Colorpicker JS/CSS library. Fork from jaypan/jquery_colorpicker.",
+            "homepage": "https://www.eyecon.ro/colorpicker/",
+            "keywords": [
+                "EBT",
+                "colorpicker",
+                "drupal",
+                "jquery"
+            ],
+            "support": {
+                "source": "https://github.com/levmyshkin/jquery_colorpicker/tree/1.0.2"
+            },
+            "time": "2021-12-01T11:34:35+00:00"
+        },
+        {
+            "name": "levmyshkin/jquery-mb-ytplayer",
+            "version": "3.3.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/levmyshkin/jquery.mb.YTPlayer.git",
+                "reference": "037f9d56dc2efb986e4ea89609d7edf2aa0ff438"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/levmyshkin/jquery.mb.YTPlayer/zipball/037f9d56dc2efb986e4ea89609d7edf2aa0ff438",
+                "reference": "037f9d56dc2efb986e4ea89609d7edf2aa0ff438",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(MIT)"
+            ],
+            "description": "jquery.mb.YTPlayer plugin as drupal-library. Fork from https://github.com/pupunzi/jquery.mb.YTPlayer.",
+            "homepage": "https://pupunzi.com/#mb.components/mb.YTPlayer/YTPlayer.html",
+            "keywords": [
+                "EBT",
+                "drupal",
+                "jquery.mb.YTPlayer"
+            ],
+            "support": {
+                "source": "https://github.com/levmyshkin/jquery.mb.YTPlayer/tree/3.3.10"
+            },
+            "time": "2021-12-24T14:45:07+00:00"
+        },
+        {
+            "name": "levmyshkin/parallaxjs",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/levmyshkin/parallax.js.git",
+                "reference": "bed64e1ad39cabe1130505010f5aaaeb50d4cf86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/levmyshkin/parallax.js/zipball/bed64e1ad39cabe1130505010f5aaaeb50d4cf86",
+                "reference": "bed64e1ad39cabe1130505010f5aaaeb50d4cf86",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(MIT)"
+            ],
+            "description": "Parallax.js pluging as drupal-library. Fork from pixelcog/parallax.js.",
+            "homepage": "https://pixelcog.github.io/parallax.js/",
+            "keywords": [
+                "EBT",
+                "drupal",
+                "parallax.js"
+            ],
+            "support": {
+                "source": "https://github.com/levmyshkin/parallax.js/tree/v1.5.1"
+            },
+            "time": "2021-12-12T14:41:01+00:00"
+        },
+        {
+            "name": "levmyshkin/vidbg",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/levmyshkin/vidbg.git",
+                "reference": "29ba2e3bc55f2b238e9a74b6997bbd67630c653e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/levmyshkin/vidbg/zipball/29ba2e3bc55f2b238e9a74b6997bbd67630c653e",
+                "reference": "29ba2e3bc55f2b238e9a74b6997bbd67630c653e",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An HTML5 video player.",
+            "homepage": "https://drupalbook.org/",
+            "keywords": [
+                "HTML5",
+                "player",
+                "video",
+                "video background"
+            ],
+            "support": {
+                "source": "https://github.com/levmyshkin/vidbg/tree/2.1.0"
+            },
+            "time": "2024-05-03T09:32:29+00:00"
         },
         {
             "name": "masterminds/html5",
