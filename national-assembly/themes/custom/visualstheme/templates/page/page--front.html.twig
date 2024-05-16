@@ -18,7 +18,7 @@
           <li class="splide__slide">
             <img src="{{ file_url(node.field_image.entity.fileuri) }}" alt="{{ node.title.value }}" />
             <div class="title-link">
-              <h2> {{ node.title.value }} </h2> Yes
+              <h2> {{ node.title.value }} </h2>
               <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">Read More</a>
             </div>
           </li>
@@ -54,7 +54,7 @@
     <h1> MEMBERS OF PARLIAMENT </h1>
     <div class="container">
       <div class="row">
-        <h5 class="text-center mt-3"> Use the filter below to find your leader <h5>
+        <h5 class="text-center mt-5"> Use the filter below to find your leader <h5>
             {{ drupal_view('members_of_parliament') }}
       </div>
     </div>

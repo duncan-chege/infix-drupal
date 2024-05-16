@@ -1,0 +1,13 @@
+name: CKEditor Bootstrap Grid
+type: module
+description: Ckeditor plugin for adding Bootstrap grids inline
+core_version_requirement: ^9.3 || ^10
+package: CKEditor
+configure: ckeditor_bs_grid.settings
+dependencies:
+  - drupal:editor
+
+# Information added by Drupal.org packaging script on 2024-01-15
+version: '2.0.11'
+project: 'ckeditor_bs_grid'
+datestamp: 1705359058
