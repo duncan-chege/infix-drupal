@@ -216,15 +216,14 @@
   color: var(--blue);
 }
 
-.news-updates h5,
-.nat-committee-work h5,
-.sen-committee-work h5 {
+.news-updates h5, .nat-committee-work h5, .sen-committee-work h5 {
+  color: var(--green);
   font-size: 1.1rem;
   padding: 14px 0;
 }
 
-.news-updates h5, .nat-committee-work h5, .sen-committee-work h5 {
-  color: var(--green);
+.news-updates .splide__pagination, .nat-committee-work .splide__pagination, .sen-committee-work .splide__pagination {
+  bottom: -1em;
 }
 
 .nav-pills .nav-link:not(.active) {

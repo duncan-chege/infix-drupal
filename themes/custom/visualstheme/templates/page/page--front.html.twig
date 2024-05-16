@@ -265,7 +265,8 @@
             <div class="splide__track">
               <ul class="splide__list">
                 {% set articleCount = 0 %}
-                {% for node in nc_nodes %}
+                {% set sortedNodes = nc_nodes|sort((a, b) => b.created.value - a.created.value) %}
+                {% for node in sortedNodes %}
                 {% if articleCount < 6 %}
                 <li class="splide__slide px-3">
                   <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
@@ -290,7 +291,8 @@
             <div class="splide__track">
               <ul class="splide__list">
                 {% set articleCount = 0 %}
-                {% for node in sc_nodes %}
+                {% set sortedNodes = sc_nodes|sort((a,b) => b.created.value - a.created.value) %}
+                {% for node in sortedNodes %}
                 {% if articleCount < 6 %}
                 <li class="splide__slide px-3">
                   <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
