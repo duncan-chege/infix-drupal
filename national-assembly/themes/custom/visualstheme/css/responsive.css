@@ -36,6 +36,10 @@
   .mp-card i {
     font-size: 1.5em;
   }
+
+  .footer-bloc {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  }
 }
 
 /* Device = Tablets, Ipads (portrait) */

@@ -1,0 +1,51 @@
+/* SINGLE PAGE */
+
+.breadcrumbs {
+  margin: 2em 0;
+}
+
+.breadcrumbs a {
+  color: var(--grey);
+  font-size: 14px;
+}
+
+.breadcrumbs a:not(:last-child)::after {
+  content: ">";
+  padding: 0 .5em;
+}
+
+.created-date {
+  font-size: 14px;
+}
+
+.single-featured-image {
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 2em;
+}
+
+hr.single-end {
+  margin: 3em 0;
+  border-width: 2px;
+}
+
+.more-articles img {
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.more-articles img:hover  {
+  filter: grayscale(1);
+  z-index: 1;
+}
+
+.more-articles h5 {
+  color: var(--green);
+  font-size: 1.1rem;
+  padding: 14px 0;
+}
+
+.more-articles .splide__pagination {
+  bottom: -1em;
+}

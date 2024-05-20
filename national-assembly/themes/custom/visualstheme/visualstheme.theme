@@ -13,4 +13,16 @@ function visualstheme_preprocess_page__front(&$variables) {
   $variables['journal_nodes'] = $jnl_nodes;
 }
 
+function visualstheme_preprocess_node(&$variables){ 
+  // Load nodes of type 'speaker_blog'.
+
+  $variables['current_node_id'] = $variables['node']->id();
+  
+  $spkr_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'speaker_blog', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['spkr_nodes'] = $spkr_nodes;
+}
+
 ?>

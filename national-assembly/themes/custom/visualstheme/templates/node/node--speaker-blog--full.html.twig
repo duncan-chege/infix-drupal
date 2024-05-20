@@ -4,12 +4,36 @@
   <a href=""> Speaker's Blog </a>
 </div>
 
-<h2 class="mb-2">{{label}}</h2>
+<h2 class="mb-2 fw-bold">{{label}}</h2>
 <p class="mb-4 created-date">{{ node.getCreatedTime|date('l, j F Y') }}</p>
-<div>{{content}}</div>
+
+{% set image_url = file_url(node.field_featured_image.entity.getFileUri())  %}
+<img class="single-featured-image" src="{{ image_url }}" alt="{{ node.field_featured_image.alt }}">
+
+<div>{{content.body}}</div>
 
 <hr class="single-end">
 
-{# <div class="more-updates">
-  <h3> More Updates </h3>
-</div> #}
+<div class="more-articles">
+  <h3 class="fw-bold mb-4"> More Speaker Articles </h3>
+
+  {% if spkr_nodes %}
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% set sortedNodes = spkr_nodes|sort((a, b) => b.created.value - a.created.value) %}
+        {% for node in sortedNodes %}
+        {% if node.id != current_node_id %}
+          <li class="splide__slide px-3">
+            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
+                src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" /></a>
+            <h5> {{ node.title.value }} </h5>
+          </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+
+</div>

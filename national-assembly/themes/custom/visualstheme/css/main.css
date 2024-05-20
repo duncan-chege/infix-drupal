@@ -128,28 +128,3 @@ hr.green-line {
   margin: 10px 0 30px;
   line-height: 1;
 }
-
-/* SINGLE PAGE */
-
-.breadcrumbs {
-  margin: 2em 0;
-}
-
-.breadcrumbs a{
-  color: var(--grey);
-  font-size: 14px;
-}
-
-.breadcrumbs a:not(:last-child)::after {
-  content: ">";
-  padding: 0 .5em;
-}
-
-.created-date{
-  font-size: 14px;
-}
-
-hr.single-end {
-  margin: 3em 0;
-  border-width: 2px;
-}
