@@ -61,70 +61,44 @@
             <div class="nat-schedule-bloc">
               <h5 class="fw-bold mt-3 mb-4"> National Assembly Schedule </h5>
 
+              {% if nat_schedule %}
               <div class="splide nat-schedule">
                 <div class="splide__track">
                   <ul class="splide__list">
-                    {# Initialize a variable to hold the previous date #}
-                    {% set prevDate = '' %}
-                    {% set articleCount = 0 %}
-
-                    {# Loop through each article #}
-                    {% for node in nat_schedule|sort((a, b) => a.field_start_time.value <=> b.field_start_time.value) %}
-                    {# Get the start time of the article #}
-                    {% set startTime = node.field_start_time.value %}
-
-                    {# Format the date string #}
-                    {% set formattedDate %}
-                    {% if startTime|date("Y-m-d") == "now"|date("Y-m-d") %}
-                    Today
-                    {% else %}
-                    {{ startTime|date("l") }}
-                    {% endif %}, {{ startTime|date("j F Y") }}
-                    {% endset %}
-
-                    {# Check if the date has changed #}
-                    {% if formattedDate != prevDate %}
-                    {# If the date has changed and the previous date is not empty, close the previous slide #}
-                    {% if prevDate != '' %}
+                    {% for item in nat_schedule %}
+                    {% set node = item.node %}
+                    {% set paragraphs = item.paragraphs %}
+                    <li class="splide__slide">
+                      <h6 class="schedule-date text-center">{{ node.title.value }}</h6>
+                      <div>
+                        {% if paragraphs %}
+                        <ul class="time-topic mt-3 p-0">
+                          {% for para in paragraphs %}
+                          <li class="d-flex position-relative">
+                            <p class="mx-3">{{ para.field_schedule_time.0.value|date('H:i') }}</p>
+                            <div>
+                              <p style="font-weight: 600;" class="mt-0 mb-1">{{ para.field_schedule_topic.value }}</p>
+                              <p style="font-size: 14px; margin-bottom: 0;">
+                                {{ para.field_schedule_description.value|striptags|split(' ')|slice(0, 10)|join(' ') }}...
+                              </p>
+                            </div>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+                      </div>
+                      <div class="nat-schedule-link">
+                        <a href="{{ url('entity.node.canonical', {'node': node.id}) }}">View Schedule</a>
+                      </div>
+                    </li>
+                    {% endfor %}
                   </ul>
-                  {% endif %}
-                  {# Open a new slide and print the formatted date #}
-                  <li class="splide__slide">
-                    <h6 class="schedule-date text-center">{{ formattedDate }}</h6>
-                    <div class="">
-                      <ul class="time-topic mt-3 p-0">
-                        {% endif %}
-                        {% if articleCount < 4 %}
-                        <li class="d-flex position-relative">
-                          <p class="mx-3">{{ node.field_start_time.0.value|date('H:i') }}</p>
-                          <div>
-                            <p style="font-weight: 600;" class="mt-0 mb-1">{{ node.title.value }}</p>
-                            <p style="font-size: 14px; margin-bottom: 0;">
-                              {{ node.body.summary ? node.body.summary|striptags|split(' ')|slice(0, 10)|join(' ') ~ '...' : node.body.value|striptags|split(' ')|slice(0, 10)|join(' ') ~ '...' }}
-                            </p>
-                          </div>
-                        </li>
-                        {% set articleCount = articleCount + 1 %}
-                        {% endif %}
-
-
-                        {# Update the previous date variable #}
-                        {% set prevDate = formattedDate %}
-                        {% endfor %}
-
-                        {# Close the last slide if there are remaining articles #}
-                        {% if prevDate != '' %}
-                      </ul>
-                      {% endif %}
-                    </div>
-                  </li>
                 </div>
               </div>
-              <div class="na-schedule-link">
-                <a href="#" class="">View Schedule</a>
-              </div>
+              {% endif %}
 
             </div>
+
 
             <div class="senate-schedule-bloc my-4">
               <h5 class="fw-bold mt-3 mb-4"> Senate Schedule </h5>

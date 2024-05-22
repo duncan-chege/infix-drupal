@@ -53,19 +53,24 @@ function visualstheme_preprocess_page__front(&$variables) {
   $variables['newsup_nodes'] = $newsup_nodes;
 
 
-  // Load nodes of type 'national assembly schedule'.
-  $nat_schedule = \Drupal::entityTypeManager()->getStorage('node')
-    ->loadByProperties(['type' => 'national_assembly_schedule', 'status' => 1]);
+  // Load nodes of type 'national_assembly_schedule' with their associated paragraphs.
+  $nat_schedule_query = \Drupal::entityQuery('node')
+    ->condition('type', 'national_assembly_schedule')
+    ->condition('status', 1)
+    ->accessCheck(TRUE);
 
-  // Add the nodes to the page variables.
-  $variables['nat_schedule'] = $nat_schedule;
+  $nat_schedule_ids = $nat_schedule_query->execute();
+  $nat_schedule_nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nat_schedule_ids);
 
-  // Load nodes of type 'national assembly schedule'.
-  $nat_schedule = \Drupal::entityTypeManager()->getStorage('node')
-    ->loadByProperties(['type' => 'national_assembly_schedule', 'status' => 1]);
+  foreach ($nat_schedule_nodes as $node) {
+    $nat_schedule_nodes[$node->id()] = [
+      'node' => $node,
+      'paragraphs' => $node->get('field_schedule_block')->referencedEntities(),
+    ];
+  }
 
-  // Add the nodes to the page variables.
-  $variables['nat_schedule'] = $nat_schedule;
+  // Add the nodes with their paragraphs to the page variables.
+  $variables['nat_schedule'] = $nat_schedule_nodes;
 
   // Load nodes of type 'senate schedule'.
   $sen_schedule = \Drupal::entityTypeManager()->getStorage('node')

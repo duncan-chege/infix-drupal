@@ -185,13 +185,13 @@
   margin-bottom: .8rem;
 }
 
-.na-schedule-link,
+.nat-schedule-link,
 .senate-schedule-link {
   display: flex;
   justify-content: end;
 }
 
-.na-schedule-link a,
+.nat-schedule-link a,
 .senate-schedule-link a {
   padding: 7px 12px;
   border: 1px solid var(--green);
@@ -201,7 +201,7 @@
   transition: .3s;
 }
 
-.na-schedule-link a:hover, .releases-bloc a:hover {
+.nat-schedule-link a:hover, .releases-bloc a:hover {
   background: var(--green);
   color: #fff !important;
 }
