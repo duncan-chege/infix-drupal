@@ -99,18 +99,18 @@
 }
 
 .nat-schedule-bloc,
-.senate-schedule-bloc {
+.sen-schedule-bloc {
   background: #eaffed;
   padding: .5em 1em;
   border-radius: 10px;
 }
 
-.senate-schedule-bloc {
+.sen-schedule-bloc {
   background: rgb(226 240 255);
 }
 
 .nat-schedule-bloc h5,
-.senate-schedule-bloc h5 {
+.sen-schedule-bloc h5 {
   font-size: 18px;
 }
 
@@ -123,11 +123,11 @@
   left: 4px;
 }
 
-.senate-schedule-bloc .time-topic li::before {
+.sen-schedule-bloc .time-topic li::before {
   border-left: 2px solid var(--blue);
 }
 
-.senate-schedule-bloc .time-topic li::after {
+.sen-schedule-bloc .time-topic li::after {
   border: 5px solid var(--blue);
 }
 
@@ -158,7 +158,7 @@
   background: var(--green);
 }
 
-.senate-schedule .splide__arrow {
+.sen-schedule .splide__arrow {
   background: var(--blue);
 }
 
@@ -167,32 +167,32 @@
 }
 
 .nat-schedule .splide__arrow--prev,
-.senate-schedule .splide__arrow--prev {
+.sen-schedule .splide__arrow--prev {
   left: 8em;
   top: 10px;
 }
 
 .nat-schedule .splide__arrow--next,
-.senate-schedule .splide__arrow--next {
+.sen-schedule .splide__arrow--next {
   right: 8em;
   top: 10px;
 }
 
 .nat-schedule li,
-.senate-schedule li {
+.sen-schedule li {
   list-style: none;
   margin-left: 1rem;
   margin-bottom: .8rem;
 }
 
 .nat-schedule-link,
-.senate-schedule-link {
+.sen-schedule-link {
   display: flex;
   justify-content: end;
 }
 
 .nat-schedule-link a,
-.senate-schedule-link a {
+.sen-schedule-link a {
   padding: 7px 12px;
   border: 1px solid var(--green);
   border-radius: 25px;
@@ -206,12 +206,12 @@
   color: #fff !important;
 }
 
-.senate-schedule-link a:hover{
+.sen-schedule-link a:hover{
   background: var(--blue);
   color: #fff;
 }
 
-.senate-schedule-link a {
+.sen-schedule-link a {
   border: 1px solid var(--blue);
   color: var(--blue);
 }

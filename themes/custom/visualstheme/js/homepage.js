@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   nat_schedule.mount();
 
-  let senate_schedule = new Splide('.splide.senate-schedule', {
+  let senate_schedule = new Splide('.splide.sen-schedule', {
     arrows: true,
     type: 'fade',
     perPage: 1,
