@@ -1,6 +1,6 @@
 /* Device: Tablets & Mobile Phones */
 @media (max-width: 1024px) {
-  
+
   .footer {
     margin-top: 0 !important;
   }
@@ -84,7 +84,7 @@
 
 /* Device = Mobile Phones (portrait) */
 @media (min-width: 320px) and (max-width: 480px) {
-  
+
   .navbar-brand img {
     height: 80px;
     width: 250px;
@@ -96,11 +96,11 @@
 
   .update-bloc img {
     height: 400px;
-}
+  }
 
-.releases-bloc {
-  padding: .5em;
-}
+  .releases-bloc {
+    padding: .5em;
+  }
 
   .first-section,
   .news-updates,
@@ -166,5 +166,9 @@
   .splide.committee-articles .splide__arrow--next,
   .splide.second-committee-articles .splide__arrow--next {
     right: 0;
+  }
+
+  .schedule-document iframe {
+    min-height: 500px;
   }
 }

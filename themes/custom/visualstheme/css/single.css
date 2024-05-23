@@ -19,13 +19,13 @@
   padding: 0 .5em;
 }
 
-.schedule-document iframe{
-    min-height: 800px;
+.schedule-document iframe {
+  min-height: 800px;
 }
 
-.single-download-button a{
-    background-color: var(--red);
-    color: #fff;
-    padding: 12px 20px;
-    display: inline-block;
+.single-download-button a {
+  background-color: var(--red);
+  color: #fff;
+  padding: 12px 20px;
+  display: inline-block;
 }
