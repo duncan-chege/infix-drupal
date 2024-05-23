@@ -1,0 +1,31 @@
+/* SINGLE PAGE */
+
+.breadcrumbs {
+  margin: 2em 0;
+}
+
+.breadcrumbs a {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.breadcrumbs a:hover {
+  color: var(--grey);
+}
+
+.breadcrumbs a:not(:last-child)::after {
+  content: ">";
+  padding: 0 .5em;
+}
+
+.schedule-document iframe{
+    min-height: 800px;
+}
+
+.single-download-button a{
+    background-color: var(--red);
+    color: #fff;
+    padding: 12px 20px;
+    display: inline-block;
+}
