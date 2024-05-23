@@ -5,8 +5,13 @@
 }
 
 .breadcrumbs a {
-  color: var(--grey);
+  color: var(--green);
   font-size: 14px;
+  font-weight: 600;
+}
+
+.breadcrumbs a:hover {
+  color: var(--grey);
 }
 
 .breadcrumbs a:not(:last-child)::after {
