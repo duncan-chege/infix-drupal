@@ -10,12 +10,12 @@
   }
 
   .nat-schedule .splide__arrow--prev,
-  .senate-schedule .splide__arrow--prev {
+  .sen-schedule .splide__arrow--prev {
     left: 0;
   }
 
   .nat-schedule .splide__arrow--next,
-  .senate-schedule .splide__arrow--next {
+  .sen-schedule .splide__arrow--next {
     right: 0;
   }
 
