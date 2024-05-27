@@ -1,6 +1,129 @@
-{# HOUSE BUSINESS PAGE #}
+{# House Business Page #}
+
 {{ page.header }}
 
-<h1>House Business</h1>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-3 d-none d-lg-block">
+      <h5 class="fw-bold">National Assembly House Business</h5>
+      <div class="doc-options">
+        <button class="d-flex tablink" onClick="openHouse(event, 'Upcoming')">
+          <img src="{{ base_path ~ directory }}/images/upcoming-business.svg">
+          <p>Upcoming Business</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Order')">
+          <img src="{{ base_path ~ directory }}/images/order-paper.svg">
+          <p>Order Paper</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Votes')">
+          <img src="{{ base_path ~ directory }}/images/votes.svg">
+          <p>Votes & Proceedings</p>
+        </button>
+        <button class="d-flex tablink active-tab" onClick="openHouse(event, 'Bills')">
+          <img src="{{ base_path ~ directory }}/images/bills.svg">
+          <p>Bills</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Hansard')">
+          <img src="{{ base_path ~ directory }}/images/pdf.svg">
+          <p>Hansard</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Statutory')">
+          <img src="{{ base_path ~ directory }}/images/statutory.svg">
+          <p>Statutory Instruments</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Motions')">
+          <img src="{{ base_path ~ directory }}/images/motions.svg">
+          <p>Motions</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Petitions')">
+          <img src="{{ base_path ~ directory }}/images/petitions.svg">
+          <p>Petitions</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Notice')">
+          <img src="{{ base_path ~ directory }}/images/notice-paper.svg">
+          <p>Notice Paper</p>
+        </button>
+        <button class="d-flex tablink" onClick="openHouse(event, 'Papers')">
+          <img src="{{ base_path ~ directory }}/images/papers-laid.svg">
+          <p>Papers Laid</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-lg-9 col-12">
+      <h5 class="fw-bold d-lg-none">National Assembly House Business</h5>
+      <p> Parliamentary Session </p>
+
+      <div class="dropdown d-lg-none">
+        <a class="btn btn-outline-dark dropdown-toggle mb-3" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Select an item </a>
+
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item" onclick="dropHouse('Upcoming', this); return false;">Upcoming Business</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Order', this); return false;">Order Paper</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Votes', this); return false;">Votes & Proceedings</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Bills', this); return false;">Bills</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Hansard', this); return false;">Hansard</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Statutory', this); return false;">Statutory</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Motions', this); return false;">Motions</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Petitions', this); return false;">Petitions</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Notice', this); return false;">Notice</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('Papers', this); return false;">Papers Laid</a>
+        </div>
+      </div>
+
+      <div id="Bills" class="doc-section">
+        <h4>Bills</h4>
+        {{ drupal_view('bills_acts') }}
+      </div>
+      <div id="Hansard" class="doc-section" style="display: none;">
+        <h4>Hansard</h4>
+        <p> Hansards not yet uploaded </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function openHouse(evt, houseName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("doc-section");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+    }
+    document.getElementById(houseName).style.display = "block";
+    evt.currentTarget.className += " active-tab";
+  }
+
+  function dropHouse(houseName, menuItem) {
+    var dropdownItems = document.getElementsByClassName("dropdown-item");
+    for (var i = 0; i < dropdownItems.length; i++) {
+      var item = dropdownItems[i];
+      if (item.getAttribute("onclick") === `dropHouse('${houseName}', this); return false;`) {
+        item.classList.add("is-active");
+        var button = menuItem.closest(".dropdown").querySelector(".dropdown-menu a");
+        button.textContent = item.textContent;
+      } else {
+        item.classList.remove("is-active");
+      }
+    }
+    var docSection = document.getElementsByClassName("doc-section");
+    for (var j = 0; j < docSection.length; j++) {
+      var doc = docSection[j];
+      if (doc.id === houseName) {
+        doc.style.display = "block";
+      } else {
+        doc.style.display = "none";
+      }
+    }
+  }
+
+</script>
 
 {{ page.footer }}

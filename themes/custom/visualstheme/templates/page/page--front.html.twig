@@ -103,7 +103,7 @@
             <div class="sen-schedule-bloc my-4">
               <h5 class="fw-bold mt-3 mb-4"> Senate Schedule </h5>
 
-             {% if sen_schedule %}
+              {% if sen_schedule %}
               <div class="splide sen-schedule">
                 <div class="splide__track">
                   <ul class="splide__list">
@@ -180,25 +180,29 @@
             <button class="tablinks" onclick="openRelease(event, 'Memorandums')">Memorandums</button>
             <button class="tablinks" onclick="openRelease(event, 'Publications')">Publications</button>
             <button class="tablinks" onclick="openRelease(event, 'Motions')">Motions</button>
-            <button class="tablinks" onclick="openRelease(event, 'Order-Paper')">Order Paper</button>
+            <button class="tablinks" onclick="openRelease(event, 'Order-Paper')">Order Papers</button>
           </div>
 
           <div id="Bills" class="tabcontent">
-            {% if bill_nodes %}
-            {{ drupal_view('bills_acts') }}
-            {% endif %}
+            {% set view_results = drupal_view('bills_acts') %}
+            {{ view_results|length > 0 ? drupal_view('bills_acts') : '<p>Bills are not available.</p>' }}
           </div>
+
           <div id="Memorandums" class="tabcontent">
-            <p> Memorandums will be posted here </p>
+            {% set view_results = drupal_view('memorandums') %}
+            {{ view_results|length > 0 ? drupal_view('memorandums') : '<p>Memorandums are not available.</p>' }}
           </div>
           <div id="Publications" class="tabcontent">
-            <p> Publications will be posted here </p>
+            {% set view_results = drupal_view('publications') %}
+            {{ view_results|length > 0 ? drupal_view('publications') : '<p>Publications are not available.</p>' }}
           </div>
           <div id="Motions" class="tabcontent">
-            <p> Motions will be posted here </p>
+            {% set view_results = drupal_view('motions') %}
+            {{ view_results|length > 0 ? drupal_view('motions') : '<p>Motions are not available.</p>' }}
           </div>
           <div id="Order-Paper" class="tabcontent">
-            <p> Order Papers will be posted here </p>
+            {% set view_results = drupal_view('order_papers') %}
+            {{ view_results|length > 0 ? drupal_view('order_papers') : '<p>Order Papers are not available.</p>' }}
           </div>
         </div>
       </div>

@@ -1,0 +1,25 @@
+.doc-options img {
+    width: 30px;
+}
+
+.doc-options button{
+    margin: 1em 0;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.doc-options p{
+    margin: .5em 0 .5em 1em;
+    color: var(--grey);
+}
+
+.doc-section {
+    background: #f3faff;
+    padding: 2em 1em;
+}
+
+.doc-section h4 {
+    font-weight: 700;
+    margin-bottom: 1em;
+}
