@@ -1,25 +1,20 @@
 <body>
   {{ page.header }}
-  <div class="top-banner">
-    <h1> Parliament of Kenya </h1>
-    <div class="breadcrumb-box">
-      <a href="#"> Parliament</a>
-      <a href="#"> National Assembly</a>
-      <a href="#"> Members of Parliament</a>
-    </div>
-  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="page-title">Members of Parliament</h1>
+      </div>
 
-  <div class="archive-mp-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+      <div class="col-md-12">
+        <div class="archive-mp-content">
           <h2> Find MPs </h2>
           <div class="filter-box">
-          {{ page.content }}
+            {{ page.content }}
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 
   {{ page.footer }}

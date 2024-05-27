@@ -1,69 +1,63 @@
-{# Hall of Leaders Page . Code a pagination feature in JS for to move between members in the 13th & 12th parliament cause they are many #}
+{# Hall of Leaders Page #}
 
 <body>
   {{ page.header }}
-  <div class="top-banner">
-    <h1> Parliament of Kenya </h1>
-    <div class="breadcrumb-box">
-      <a href="#"> Parliament</a>
-      <a href="#"> {{ node.title.value }} </a>
-    </div>
-  </div>
 
-  <div class="hall-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2> {{ node.title.value }} </h2>
-          <div class="">
-            {{ page.content }}
-          </div>
-
-          <div class="leaders-display">
-            <div class="slide">
-              <button class="me-5" data-dir="previous" onclick="selectParliament(event)">
-                <</button> <fieldset id="parliament-fieldset">
-                  <legend class="sr-only">Select a Parliament: </legend>
-                  <div class="input-wrapper active">
-                    <input class="sr-only" type="radio" id="parliament-13th" name="parliament" value="13th">
-                    <label for="parliament-12th">13th Parliament</label>
-                  </div>
-                  <div class="input-wrapper">
-                    <input class="sr-only" type="radio" id="parliament-12th" name="parliament" value="12th">
-                    <label for="parliament-13th">12th Parliament</label>
-                  </div>
-                  </fieldset>
-                  <button class="ms-5" data-dir="next" onclick="selectParliament(event)">></button>
-            </div>
-
-            {% if mp_nodes %}
-            <div data-simplebar id="mp-container">
-              <div class="row">
-                {% for node in mp_nodes %}
-                <div class="col-md-2 col-6 text-center" data-parliament="{{ node.field_parliament_session.value }}">
-                  {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
-
-                  {% if image_url %}
-                  <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
-                  {% else %}
-                  <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
-                  {% endif %}
-                  <p class="mt-2 mb-0 fw-bold">{{ node.title.value }}</p>
-                  {% if node.field_constituency.value %}
-                  <p class="mb-2">MP: {{ node.field_constituency.value }}</p>
-                  {% else %}
-                  <p class="mb-2">{{ node.field_parliament_role.value }}</p>
-                  {% endif %}
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-            {% endif %}
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="page-title">{{ node.title.value }}</h1>
       </div>
 
+      <div class="col-md-12">
+        <div> {{ page.content }}</div>
+
+        <div class="leaders-display">
+          <div class="slide">
+            <button data-dir="previous" onclick="selectParliament(event)">
+              <i class="bi bi-arrow-left-circle-fill"></i></button>
+            <fieldset id="parliament-fieldset">
+              <legend class="sr-only">Select a Parliament: </legend>
+              <div class="input-wrapper active">
+                <input class="sr-only" type="radio" id="parliament-13th" name="parliament" value="13th">
+                <label for="parliament-13th">13th Parliament</label>
+              </div>
+              <div class="input-wrapper">
+                <input class="sr-only" type="radio" id="parliament-12th" name="parliament" value="12th">
+                <label for="parliament-12th">12th Parliament</label>
+              </div>
+            </fieldset>
+            <button data-dir="next" onclick="selectParliament(event)"><i
+                class="bi bi-arrow-right-circle-fill"></i></button>
+          </div>
+
+          {% if mp_nodes %}
+          <div data-simplebar id="mp-container">
+            <div class="row">
+              {% for node in mp_nodes %}
+              <div class="col-md-2 col-6 text-center" data-parliament="{{ node.field_parliament_session.value }}">
+                {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
+
+                {% if image_url %}
+                <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">
+                {% else %}
+                <img src="{{ base_path ~ directory }}/images/mp-placeholder.jpg">
+                {% endif %}
+                <p class="fw-bold">{{ node.title.value }}</p>
+                {% if node.field_constituency.value %}
+                <p class="mb-2" style="font-size: 14px; line-height: 1.2;">MP: {{ node.field_constituency.value }}</p>
+                {% else %}
+                <p class="mb-2" style="font-size: 14px; line-height: 1.2;">{{ node.field_parliament_role.value }}</p>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
+
   </div>
 
   {{ page.footer }}

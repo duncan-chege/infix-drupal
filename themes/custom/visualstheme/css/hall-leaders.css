@@ -9,10 +9,12 @@
 
 .leaders-display {
   margin: 3em 0;
+  padding: 1em 0;
+  background: #47ffad12;
+  border-radius: 10px;
 }
 
 .leaders-display>div:first-of-type {
-  background: #6dbe7a;
   margin-bottom: 2em;
   padding: 10px;
   display: flex;
@@ -26,15 +28,18 @@
 }
 
 .leaders-display button {
-  font-size: 41px;
+  font-size: 28px;
   background: none;
   border: none;
   line-height: 0;
+  color: #68b574;
 }
 
 .leaders-display label {
   font-size: 22px;
   font-weight: bold;
+  color: var(--green);
+  margin: 0 1em;
 }
 
 .sr-only {
@@ -48,10 +53,9 @@
   border: 0;
 }
 
-/* .input-wrapper,
-ul {
+.input-wrapper {
   display: none;
-} */
+}
 
 .input-wrapper.active {
   display: flex;
@@ -67,9 +71,8 @@ ul.active {
 }
 
 #mp-container p:first-of-type{
-  font-size: 1.1em;
-  font-weight: bold;
-  margin: 0.5em 0 0 0;
+  line-height: 1.2;
+  margin: 0.5em 0 0.3em 0;
 }
 
 .simplebar-scrollbar::before {
