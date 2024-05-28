@@ -47,13 +47,21 @@ input.form-control.me-2 {
   color: #fff !important;
 }
 
-.region-content,.region-footer {
+.region-content,
+.region-footer {
   padding: 0;
 }
 
 .page-title {
   font-weight: 700;
   margin: 1.2em 0 0.8em;
+}
+
+i.bi {
+  font-size: 1.2rem;
+  top: 3px;
+  left: 3px;
+  position: relative;
 }
 
 .footer {
@@ -64,7 +72,7 @@ input.form-control.me-2 {
   color: #fff;
 }
 
-.footer-bloc{
+.footer-bloc {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 4em;
@@ -102,6 +110,6 @@ input.form-control.me-2 {
   border-bottom: 1px solid #fff;
 }
 
-.footer iframe{
+.footer iframe {
   border-radius: 10px;
 }

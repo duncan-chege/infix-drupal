@@ -6,7 +6,7 @@
   }
 
   .releases-bloc {
-    padding: .5em;
+    padding: 1.2em .5em 1.2em;
   }
 
   .nat-schedule .splide__arrow--prev,
@@ -96,10 +96,6 @@
 
   .update-bloc img {
     height: 400px;
-  }
-
-  .releases-bloc {
-    padding: .5em;
   }
 
   .first-section,

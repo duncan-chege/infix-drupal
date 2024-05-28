@@ -350,6 +350,17 @@
   background: #edfdf0;
 }
 
+.releases-bloc>a {
+  display: block;
+  margin: 0 auto;
+  width: 155px;
+  text-align: center;
+  background: var(--green);
+  color: #fff;
+  padding: 9px 15px;
+  font-size: 14px;
+}
+
 .nat-committee-work img,
 .news-updates img,
 .sen-committee-work img {
