@@ -124,6 +124,18 @@
     }
   }
 
+  // Get all elements with the class "doc-row"
+  const docRows = document.querySelectorAll('.doc-row');
+
+  // Loop through each element
+  docRows.forEach((row, index) => {
+    // Check if the index is odd
+    if (index % 2 === 1) {
+      // Set the background color to white for odd numbered elements
+      row.style.backgroundColor = 'white';
+    }
+  });
+
 </script>
 
 {{ page.footer }}

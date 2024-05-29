@@ -1,4 +1,4 @@
-<div class="col-md-2 text-center" data-parliament="{{ node.field_parliament_number.value }}">
+<div class="doc-row" class="col-md-2 text-center" data-parliament="{{ node.field_parliament_number.value }}">
   {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
   {% if image_url %}
   <img src="{{ image_url }}" alt="{{ node.field_images.alt }}">

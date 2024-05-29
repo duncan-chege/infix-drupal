@@ -201,7 +201,7 @@
   transition: .3s;
 }
 
-.nat-schedule-link a:hover, .releases-bloc a:hover {
+.nat-schedule-link a:hover, .doc-row a:hover {
   background: var(--green);
   color: #fff !important;
 }
@@ -324,7 +324,7 @@
   padding: 2em 1em;
 }
 
-.tabcontent a:not(.pager a) {
+.doc-row a:not(.pager a) {
   padding: 5px 30px;
   color: var(--green);
   font-size: 14px;
