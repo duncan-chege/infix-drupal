@@ -193,31 +193,27 @@
           </div>
 
           <div id="Bills" class="tabcontent">
-            {% set view = drupal_view('bills_acts', 'frontpage') %}
-            {{ view.total_rows > 0 ? view : '<p>Bills & Acts are not available.</p>' }}
+          {{ drupal_view('bills_acts', 'frontpage') }}
           </div>
 
           <div id="Memorandums" class="tabcontent">
-            {% set view = drupal_view('memorandums', 'frontpage') %}
-            {{ view.total_rows > 0 ? view : '<p>Memorandums are not available.</p>' }}
+            {{ drupal_view('memorandums', 'frontpage') }}
           </div>
 
           <div id="Publications" class="tabcontent">
-            {% set view = drupal_view('publications') %}
-            {{ view.total_rows > 0 ? view : '<p>Publications are not available.</p>' }}
+            {{ drupal_view('publications', 'frontpage') }}
           </div>
 
           <div id="Motions" class="tabcontent">
-            {% set view = drupal_view('motions') %}
-            {{ view.total_rows > 0 ? view : '<p>Motions are not available.</p>' }}
+            {{ drupal_view('motions', 'frontpage') }}
           </div>
 
           <div id="Order-Paper" class="tabcontent">
-            {% set view = drupal_view('order_papers') %}
-            {{ view.total_rows > 0 ? view : '<p>Order Papers are not available.</p>' }}
+            {{ drupal_view('order_papers', 'frontpage') }}
           </div>
 
-      <a class="nav-link" href="{{ path('<front>') }}house-business">More Releases <i class="bi bi-arrow-right"></i></a>
+          <a class="nav-link" href="{{ path('<front>') }}house-business">More Releases <i
+              class="bi bi-arrow-right"></i></a>
         </div>
       </div>
 
