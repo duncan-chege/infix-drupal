@@ -3,10 +3,12 @@
 }
 
 .doc-options button {
-  margin: 1em 0;
+  margin: 10px 0;
   border: none;
   outline: none;
   background: none;
+  padding: 10px 10px 5px;
+  width: 100%;
 }
 
 .doc-options p {
@@ -31,4 +33,9 @@
     overflow-x: auto;
     padding: 14px 14px 0px 14px;
     align-items: center;
+}
+
+button.active-tab {
+  background: #f4f4f4;
+  border-right: 4px solid var(--green);
 }

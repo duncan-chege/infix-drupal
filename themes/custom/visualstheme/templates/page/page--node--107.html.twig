@@ -7,43 +7,43 @@
     <div class="col-lg-3 d-none d-lg-block">
       <h5 class="fw-bold">National Assembly House Business</h5>
       <div class="doc-options">
-        <button class="d-flex tablink" onClick="openHouse(event, 'Upcoming')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'upcoming')">
           <img src="{{ base_path ~ directory }}/images/upcoming-business.svg">
           <p>Upcoming Business</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Order')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'order')">
           <img src="{{ base_path ~ directory }}/images/order-paper.svg">
           <p>Order Paper</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Votes')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'votes')">
           <img src="{{ base_path ~ directory }}/images/votes.svg">
           <p>Votes & Proceedings</p>
         </button>
-        <button class="d-flex tablink active-tab" onClick="openHouse(event, 'Bills')">
+        <button class="d-flex tablink" id="defaultOpen" onclick="openHouse(event, 'bills')">
           <img src="{{ base_path ~ directory }}/images/bills.svg">
           <p>Bills</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Hansard')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'hansard')">
           <img src="{{ base_path ~ directory }}/images/pdf.svg">
           <p>Hansard</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Statutory')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'statutory')">
           <img src="{{ base_path ~ directory }}/images/statutory.svg">
           <p>Statutory Instruments</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Motions')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'motions')">
           <img src="{{ base_path ~ directory }}/images/motions.svg">
           <p>Motions</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Petitions')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'petitions')">
           <img src="{{ base_path ~ directory }}/images/petitions.svg">
           <p>Petitions</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Notice')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'notice')">
           <img src="{{ base_path ~ directory }}/images/notice-paper.svg">
-          <p>Notice Paper</p>
+          <p>Notice Papers</p>
         </button>
-        <button class="d-flex tablink" onClick="openHouse(event, 'Papers')">
+        <button class="d-flex tablink" onclick="openHouse(event, 'papers')">
           <img src="{{ base_path ~ directory }}/images/papers-laid.svg">
           <p>Papers Laid</p>
         </button>
@@ -60,27 +60,69 @@
           Select an item </a>
 
         <div class="dropdown-menu">
-          <a href="#" class="dropdown-item" onclick="dropHouse('Upcoming', this); return false;">Upcoming Business</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Order', this); return false;">Order Paper</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Votes', this); return false;">Votes & Proceedings</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Bills', this); return false;">Bills</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Hansard', this); return false;">Hansard</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Statutory', this); return false;">Statutory</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Motions', this); return false;">Motions</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Petitions', this); return false;">Petitions</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Notice', this); return false;">Notice</a>
-          <a href="#" class="dropdown-item" onclick="dropHouse('Papers', this); return false;">Papers Laid</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('upcoming', this); return false;">Upcoming Business</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('order', this); return false;">Order Papers</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('votes', this); return false;">Votes & Proceedings</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('bills', this); return false;">Bills</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('hansard', this); return false;">Hansard</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('statutory', this); return false;">Statutory</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('motions', this); return false;">Motions</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('petitions', this); return false;">Petitions</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('notice', this); return false;">Notice Papers</a>
+          <a href="#" class="dropdown-item" onclick="dropHouse('papers', this); return false;">Papers Laid</a>
         </div>
       </div>
 
-      <div id="Bills" class="doc-section">
+      <div id="upcoming" class="doc-section">
+        <h4>Upcoming Business</h4>
+        {{ drupal_view('upcoming_business') }}
+      </div>
+
+      <div id="order" class="doc-section">
+        <h4>Order Papers</h4>
+        {{ drupal_view('order_papers') }}
+      </div>
+
+      <div id="votes" class="doc-section">
+        <h4>Votes & Proceedings</h4>
+        {{ drupal_view('votes_proceedings') }}
+      </div>
+
+      <div id="bills" class="doc-section">
         <h4>Bills</h4>
         {{ drupal_view('bills_acts') }}
       </div>
-      <div id="Hansard" class="doc-section" style="display: none;">
+
+      <div id="hansard" class="doc-section">
         <h4>Hansard</h4>
-        <p> Hansards not yet uploaded </p>
+        {{ drupal_view('hansard') }}
       </div>
+
+      <div id="statutory" class="doc-section">
+        <h4>Statutory Instruments</h4>
+        {{ drupal_view('statutory_instruments') }}
+      </div>
+
+      <div id="motions" class="doc-section">
+        <h4>Motions</h4>
+        {{ drupal_view('motions') }}
+      </div>
+
+      <div id="petitions" class="doc-section">
+        <h4>Petitions</h4>
+        {{ drupal_view('petitions') }}
+      </div>
+
+      <div id="notice" class="doc-section">
+        <h4>Notice Papers</h4>
+        {{ drupal_view('notice_papers') }}
+      </div>
+
+       <div id="papers" class="doc-section">
+        <h4>Papers Laid</h4>
+        {{ drupal_view('papers_laid') }}
+      </div>
+
     </div>
   </div>
 </div>
@@ -94,25 +136,30 @@
       x[i].style.display = "none";
     }
     tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < x.length; i++) {
+    for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
     }
     document.getElementById(houseName).style.display = "block";
     evt.currentTarget.className += " active-tab";
   }
 
+  document.getElementById("defaultOpen").click();
+
   function dropHouse(houseName, menuItem) {
     var dropdownItems = document.getElementsByClassName("dropdown-item");
+    for (var i = 0; i < dropdownItems.length; i++) {
+      var item = dropdownItems[i];
+      item.classList.remove("is-active");
+    }
     for (var i = 0; i < dropdownItems.length; i++) {
       var item = dropdownItems[i];
       if (item.getAttribute("onclick") === `dropHouse('${houseName}', this); return false;`) {
         item.classList.add("is-active");
         var button = menuItem.closest(".dropdown").querySelector(".dropdown-menu a");
         button.textContent = item.textContent;
-      } else {
-        item.classList.remove("is-active");
       }
     }
+
     var docSection = document.getElementsByClassName("doc-section");
     for (var j = 0; j < docSection.length; j++) {
       var doc = docSection[j];
