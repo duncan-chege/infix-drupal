@@ -1,22 +1,17 @@
 /* SINGLE PAGE */
 
-.breadcrumbs {
+.breadcrumb {
   margin: 2em 0;
 }
 
-.breadcrumbs a {
+.breadcrumb a, .breadcrumb li {
   color: var(--green);
   font-size: 14px;
   font-weight: 600;
 }
 
-.breadcrumbs a:hover {
+.breadcrumb a:hover {
   color: var(--grey);
-}
-
-.breadcrumbs a:not(:last-child)::after {
-  content: ">";
-  padding: 0 .5em;
 }
 
 .schedule-document iframe {

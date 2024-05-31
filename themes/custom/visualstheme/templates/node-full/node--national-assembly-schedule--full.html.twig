@@ -1,6 +1,10 @@
-<div class="breadcrumbs">
-  <a href="{{ path('<front>') }}"> Home </a>
-</div>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ path('<front>') }}">Home</a></li>
+    <li class="breadcrumb-item" style="color: var(--grey);">National Assembly Schedule</li>
+    <li class="breadcrumb-item active" aria-current="page">{{label}}</li>
+  </ol>
+</nav>
 
 <h2 class="mb-2 fw-bold">National Assembly Schedule: {{label}}</h2>
 

@@ -1,26 +1,27 @@
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ path('<front>') }}">Home</a></li>
-    <li class="breadcrumb-item" style="color: var(--grey);">Senate Schedule</li>
+    <li class="breadcrumb-item"><a href="{{ path('<front>') }}house-business">House Business</a></li>
+     <li class="breadcrumb-item" style="color: var(--grey);">Statutory Instruments</li>
     <li class="breadcrumb-item active" aria-current="page">{{label}}</li>
   </ol>
 </nav>
 
-<h2 class="mb-2 fw-bold">Senate Schedule: {{label}}</h2>
+<h2 class="mb-2 fw-bold">{{label}}</h2>
 
 <div class="row" style="margin: 2em 0;">
   <div class="col-md-8 order-2 order-md-1">
     <div class="schedule-document">
-      <iframe src="{{ file_url (node.field_schedule_document.entity.uri.value) }}" width="100%" height="500%">
+      <iframe src="{{ file_url (node.field_statutory_doc.entity.uri.value) }}" width="100%" height="500%">
       </iframe>
     </div>
   </div>
 
   <div class="col-md-4 order-1 order-md-2">
-    {% if content.field_schedule_document %}
+    {% if content.field_statutory_doc %}
 
     <div class="single-download-button mb-3 mb-md-0">
-      <a href="{{ file_url (node.field_schedule_document.entity.uri.value) }}" download>
+      <a href="{{ file_url (node.field_statutory_doc.entity.uri.value) }}" download>
         Download <i class="bi bi-download"></i>
       </a>
     </div>
