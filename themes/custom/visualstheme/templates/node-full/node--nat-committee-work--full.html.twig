@@ -1,7 +1,7 @@
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ path('<front>') }}">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">News Updates</a></li>
+    <li class="breadcrumb-item"><a href="#">National Assembly Committee Work</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{label}}</li>
   </ol>
 </nav>
@@ -17,13 +17,13 @@
 <hr class="single-end">
 
 <div class="more-articles">
-  <h3 class="fw-bold mb-4"> More News Updates </h3>
+  <h3 class="fw-bold mb-4"> More National Assembly Committee Updates </h3>
 
-  {% if newsup_nodes %}
+  {% if nc_nodes %}
   <div class="splide">
     <div class="splide__track">
       <ul class="splide__list">
-        {% set sortedNodes = newsup_nodes|sort((a, b) => b.created.value - a.created.value) %}
+        {% set sortedNodes = nc_nodes|sort((a, b) => b.created.value - a.created.value) %}
         {% for node in sortedNodes %}
         {% if node.id != current_node_id %}
         <li class="splide__slide px-3">
