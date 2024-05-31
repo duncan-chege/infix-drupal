@@ -31,10 +31,10 @@
                 class="bi bi-arrow-right-circle-fill"></i></button>
           </div>
 
-          {% if mp_nodes %}
+          {% if mps_nodes %}
           <div data-simplebar id="mp-container">
             <div class="row">
-              {% for node in mp_nodes %}
+              {% for node in mps_nodes %}
               <div class="col-md-2 col-6 text-center" data-parliament="{{ node.field_parliament_session.value }}">
                 {% set image_url = file_url(node.field_mp_image.entity.getFileUri())  %}
 
@@ -76,7 +76,8 @@
 
       let newActiveEl;
       if (dir === 'next') {
-        newActiveEl = parentEl.nextElementSibling ? parentEl.nextElementSibling : parentEl.parentElement.children[1];
+        newActiveEl = parentEl.nextElementSibling ? parentEl.nextElementSibling : parentEl.parentElement.children[
+          1];
       } else {
         newActiveEl = parentEl.previousElementSibling.tagName.toLowerCase() !== 'legend' ? parentEl
           .previousElementSibling : parentEl.parentElement.lastElementChild;

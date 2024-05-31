@@ -103,13 +103,6 @@ function visualstheme_preprocess_page__front(&$variables) {
 }
 
 function visualstheme_preprocess_node(&$variables){
-    
-  // Load nodes of type 'members of parliament'.
-  $mp_nodes = \Drupal::entityTypeManager()->getStorage('node')
-    ->loadByProperties(['type' => 'member_of_parliament', 'status' => 1]);
-
-  // Add the nodes to the page variables.
-  $variables['mp_nodes'] = $mp_nodes;
 
   $variables['current_node_id'] = $variables['node']->id();
 
@@ -133,6 +126,16 @@ function visualstheme_preprocess_node(&$variables){
 
   // Add the nodes to the page variables.
   $variables['sc_nodes'] = $sc_nodes;
+}
+
+function visualstheme_preprocess_page(&$variables) {
+
+    // Load nodes of type 'members of parliament'.
+    $mps_nodes = \Drupal::entityTypeManager()->getStorage('node')
+        ->loadByProperties(['type' => 'member_of_parliament', 'status' => 1]);
+
+    // Add the nodes to the page variables.
+    $variables['mps_nodes'] = $mps_nodes;
 }
 
 ?>
