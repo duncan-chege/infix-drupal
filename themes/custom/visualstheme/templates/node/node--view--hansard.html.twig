@@ -1,0 +1,9 @@
+ <div class="doc-row">
+   <p style="font-size: 14px;"> {{ node.field_date_passed.value|date("j F Y") }} </p>
+   <p class="fw-semibold"> {{ node.field_hansard_num.value }} </p>
+   <p style="width: 450px;"> {{ node.title.value }} </p>
+   <p style="font-size: 14px;"> {{ node.field_house.value }} </p>
+   <a href="{{ path('entity.node.canonical', {'node': node.id}) }}" class="">View</a>
+ </div>
+
+

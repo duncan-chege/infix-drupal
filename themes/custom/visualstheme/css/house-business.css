@@ -23,7 +23,6 @@
 
 .doc-section h4 {
   font-weight: 700;
-  margin-bottom: 1em;
 }
 
 .doc-row {
@@ -38,4 +37,15 @@
 button.active-tab {
   background: #f4f4f4;
   border-right: 4px solid var(--green);
+}
+
+.doc-section .form--inline.clearfix {
+  display: flex;
+  align-items: center;
+}
+
+.doc-section .form-submit {
+  margin: 20px 0 0 10px;
+  background: var(--green);
+  border: none;
 }

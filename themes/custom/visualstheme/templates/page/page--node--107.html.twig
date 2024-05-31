@@ -52,7 +52,6 @@
 
     <div class="col-lg-9 col-12">
       <h5 class="fw-bold d-lg-none">National Assembly House Business</h5>
-      <p> Parliamentary Session </p>
 
       <div class="dropdown d-lg-none">
         <a class="btn btn-outline-dark dropdown-toggle mb-3" href="#" role="button" data-bs-toggle="dropdown"
@@ -80,7 +79,7 @@
 
       <div id="order" class="doc-section">
         <h4>Order Papers</h4>
-        {{ drupal_view('order_papers') }}
+        {{ drupal_view('order_papers', 'block_1') }}
       </div>
 
       <div id="votes" class="doc-section">
@@ -90,7 +89,7 @@
 
       <div id="bills" class="doc-section">
         <h4>Bills</h4>
-        {{ drupal_view('bills_acts') }}
+        {{ drupal_view('bills_acts', 'block_1') }}
       </div>
 
       <div id="hansard" class="doc-section">
@@ -105,7 +104,7 @@
 
       <div id="motions" class="doc-section">
         <h4>Motions</h4>
-        {{ drupal_view('motions') }}
+        {{ drupal_view('motions','block_1') }}
       </div>
 
       <div id="petitions" class="doc-section">
@@ -120,7 +119,7 @@
 
        <div id="papers" class="doc-section">
         <h4>Papers Laid</h4>
-        {{ drupal_view('papers_laid') }}
+        {{ drupal_view('papers_laid', 'block_1') }}
       </div>
 
     </div>

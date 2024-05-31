@@ -5,17 +5,17 @@
 <h2 class="mb-2 fw-bold">Senate Schedule: {{label}}</h2>
 
 <div class="row" style="margin: 2em 0;">
-  <div class="col-md-8">
+  <div class="col-md-8 order-2 order-md-1">
     <div class="schedule-document">
       <iframe src="{{ file_url (node.field_schedule_document.entity.uri.value) }}" width="100%" height="500%">
       </iframe>
     </div>
   </div>
 
-  <div class="col-md-2">
+  <div class="col-md-4 order-1 order-md-2">
     {% if content.field_schedule_document %}
 
-    <div class="single-download-button">
+    <div class="single-download-button mb-3 mb-md-0">
       <a href="{{ file_url (node.field_schedule_document.entity.uri.value) }}" download>
         Download <i class="bi bi-download"></i>
       </a>
