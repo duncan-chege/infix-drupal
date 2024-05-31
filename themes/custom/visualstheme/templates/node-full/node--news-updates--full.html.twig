@@ -1,7 +1,7 @@
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ path('<front>') }}">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Speaker's Blog</a></li>
+    <li class="breadcrumb-item"><a href="#">News Updates</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{label}}</li>
   </ol>
 </nav>
@@ -17,20 +17,20 @@
 <hr class="single-end">
 
 <div class="more-articles">
-  <h3 class="fw-bold mb-4"> More Speaker Articles </h3>
+  <h3 class="fw-bold mb-4"> More News Updates </h3>
 
-  {% if spkr_nodes %}
+  {% if newsup_nodes %}
   <div class="splide">
     <div class="splide__track">
       <ul class="splide__list">
-        {% set sortedNodes = spkr_nodes|sort((a, b) => b.created.value - a.created.value) %}
+        {% set sortedNodes = newsup_nodes|sort((a, b) => b.created.value - a.created.value) %}
         {% for node in sortedNodes %}
         {% if node.id != current_node_id %}
-          <li class="splide__slide px-3">
-            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
-                src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" /></a>
-            <h5> {{ node.title.value }} </h5>
-          </li>
+        <li class="splide__slide px-3">
+          <a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><img
+              src="{{ file_url(node.field_featured_image.entity.fileuri) }}" alt="{{ node.title.value }}" /></a>
+          <h5> {{ node.title.value }} </h5>
+        </li>
         {% endif %}
         {% endfor %}
       </ul>
@@ -39,3 +39,24 @@
   {% endif %}
 
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  let more_news = new Splide('.more-articles .splide', {
+    arrows: false,
+    perPage: 3,
+    pagination: true,
+    autoplay: true,
+    speed: 250,
+    breakpoints: {
+      1024: {
+        perPage: 2,
+      },
+      640: {
+        perPage: 1,
+      },
+    }
+  });
+  more_news.mount();
+  });
+</script>

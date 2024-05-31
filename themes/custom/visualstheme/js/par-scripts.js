@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   sen_committee.mount();
-
 });
 
 function openRelease(event, releaseName) {

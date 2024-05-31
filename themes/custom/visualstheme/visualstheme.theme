@@ -99,22 +99,26 @@ function visualstheme_preprocess_page__front(&$variables) {
 
   // Add the nodes to the page variables.
   $variables['cnt_nodes'] = $cnt_nodes;
-
-  if ($variables['is_front'] == TRUE) {
-    $variables['#attached']['library'][] = 'visualstheme/homepage-js';
-  }
+  
 }
 
-function visualstheme_preprocess_page(&$variables){
-  global $request;
-  $current_path = $request->getRequestUri();
+function visualstheme_preprocess_node(&$variables){
     
   // Load nodes of type 'members of parliament'.
-    $mp_nodes = \Drupal::entityTypeManager()->getStorage('node')
-      ->loadByProperties(['type' => 'member_of_parliament', 'status' => 1]);
+  $mp_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'member_of_parliament', 'status' => 1]);
 
-    // Add the nodes to the page variables.
-    $variables['mp_nodes'] = $mp_nodes;
+  // Add the nodes to the page variables.
+  $variables['mp_nodes'] = $mp_nodes;
+
+  $variables['current_node_id'] = $variables['node']->id();
+
+  // Load nodes of type 'news & updates'.
+  $newsup_nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'news_updates', 'status' => 1]);
+
+  // Add the nodes to the page variables.
+  $variables['newsup_nodes'] = $newsup_nodes;
 }
 
 ?>

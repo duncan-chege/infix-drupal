@@ -7,8 +7,6 @@ core_version_requirement: ^9 || ^10
 
 libraries:
   - visualstheme/global-library
-  - visualstheme/homepage-js
-  - visualstheme/archivemps-js
 
 regions:
   header: 'Header'

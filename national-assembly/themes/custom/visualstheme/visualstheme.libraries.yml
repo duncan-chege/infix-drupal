@@ -12,10 +12,9 @@ global-library:
   js:
     //cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js: { type: external }
     //stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js: { type: external }
+    //cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js: { type: external }
+    js/nat-scripts.js: {}
     dependancies:
       - core/jquery
 
-homepage-js:
-  js:
-    js/homepage.js: {}
-    //cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js: { type: external }
+   
